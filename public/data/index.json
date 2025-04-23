@@ -1,16 +1,34 @@
 {
-    "chapters": [
-        {
-            "title": "O Ar",
-            "description": "O ar é um elemento essencial para a vida...",
-            "file": "o_ar.json",
-            "questions": 10
-          },
-      {
-        "title": "O Solo Terrestre",
-        "description": "O solo é a camada superficial da crosta terrestre...",
-        "file": "o_solo.json",
-        "questions": 10
-      }
-    ]
-  }
+  "chapters": [
+    {
+      "title": "Ciências: O Universo",
+      "description": "O Universo é tudo o que existe. A palavra vem do latim 'universum'...",
+      "file": "o_universo.json",
+      "questions": 10
+    },
+    {
+      "title": "Ciências: O Ar",
+      "description": "O ar é um elemento essencial para a vida...",
+      "file": "o_ar.json",
+      "questions": 10
+    },
+    {
+      "title": "Ciências: O Solo Terrestre",
+      "description": "O solo é a camada superficial da crosta terrestre...",
+      "file": "o_solo.json",
+      "questions": 10
+    },
+    {
+      "title": "Ciências: Os Cuidados com o Solo",
+      "description": "O solo sofre desgaste com a ação do vento, da chuva...",
+      "file": "os_cuidados_solo.json",
+      "questions": 10
+    },
+    {
+      "title": "Ciências: O Lixo e a Poluição",
+      "description": "O lixo é tudo aquilo que já não tem utilidade e é descartado...",
+      "file": "os_lixo.json",
+      "questions": 10
+    }
+  ]
+}
