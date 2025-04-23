@@ -13,6 +13,7 @@ const btnReturnHome = document.getElementById('btn-return-home');
 
 // Variáveis globais
 let currentChapter = null;
+let currentChapterFile = null;
 
 // Função para carregar a lista de capítulos
 async function loadChaptersList() {
@@ -36,14 +37,20 @@ async function loadChaptersList() {
     // Adicionar cada capítulo à lista
     chapters.forEach(chapter => {
       const listItem = document.createElement('a');
+      listItem.setAttribute('data-quiz-id', chapter.file);
       listItem.href = '#';
-      listItem.className = 'list-group-item list-group-item-action d-flex justify-content-between align-items-center';
+      listItem.className = 'list-group-item list-group-item-action d-flex justify-content-between align-items-center quiz-card';
       listItem.innerHTML = `
         <div>
           <h5 class="mb-1">${chapter.title}</h5>
           <small>${chapter.description || 'Clique para acessar o resumo e o quiz'}</small>
         </div>
-        <span class="badge bg-primary rounded-pill">${chapter.questions || '?'} perguntas</span>
+        <div class="text-end">
+        <span class="badge bg-primary">${chapter.questions || '?'} perguntas</span><br>
+        <i class="bi bi-puzzle-fill text-info"></i> <span class="badge bg-info quiz-stats-attempts">000</span><br>
+        <i class="bi bi-arrow-up-right-square text-success"></i> <span class="badge bg-success quiz-stats-max">000</span><br>
+        <i class="bi bi-arrow-down-right-square text-secondary text-opacity-75"></i> <span class="badge bg-secondary bg-opacity-50 quiz-stats-min">000</span><br>
+        </div>
       `;
       
       // Adicionar evento de clique para abrir o resumo
@@ -63,6 +70,7 @@ async function loadChaptersList() {
       </div>
     `;
   }
+  updateQuizListWithScores();
 }
 
 // Função para carregar o resumo de um capítulo
@@ -70,6 +78,7 @@ async function loadChapterSummary(chapterFile) {
   try {
     const response = await axios.get(`/data/${chapterFile}`);
     currentChapter = response.data;
+    currentChapterFile = chapterFile;
     
     // Atualizar o título e o conteúdo do resumo
     summaryTitle.textContent = currentChapter.assunto;
@@ -173,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Botão para iniciar o quiz
   btnStartQuiz.addEventListener('click', () => {
     if (currentChapter) {
-      initializeQuiz(currentChapter);
+      initializeQuiz(currentChapter, currentChapterFile);
       chapterSummary.classList.add('d-none');
       quizContainer.classList.remove('d-none');
     }
@@ -182,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Botão para tentar o quiz novamente
   btnRetryQuiz.addEventListener('click', () => {
     if (currentChapter) {
-      initializeQuiz(currentChapter);
+      initializeQuiz(currentChapter, currentChapterFile);
       resultsContainer.classList.add('d-none');
       quizContainer.classList.remove('d-none');
     }

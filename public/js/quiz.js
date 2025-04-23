@@ -17,14 +17,17 @@ let totalQuestions = 0;
 let score = 0;
 let incorrectQuestions = [];
 let isReviewMode = false;
+let chapterFile = null;
 
 // Função para inicializar o quiz
-function initializeQuiz(chapter) {
+function initializeQuiz(chapter, file) {
+  console.log(chapter);
   // Reset das variáveis
   currentQuestionIndex = 0;
   score = 0;
   incorrectQuestions = [];
   isReviewMode = false;
+  chapterFile = file;
   
   // Configurar título
   quizTitle.textContent = `Quiz: ${chapter.assunto}`;
@@ -52,6 +55,7 @@ function loadQuestion() {
     } else {
       // Se não há mais perguntas (ou já revisou as incorretas), mostrar resultados
       showResults();
+
     }
     return;
   }
@@ -194,6 +198,8 @@ function showResults() {
   }
   
   performanceMessage.textContent = message;
+  finishQuiz(chapterFile, score);
+  updateQuizListWithScores();
 }
 
 // Função para atualizar o contador de perguntas
@@ -228,4 +234,12 @@ function shuffleArray(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
+}
+
+// Função para registrar a pontuação ao finalizar um quiz
+function finishQuiz(quizId, score) {
+  // Salva a pontuação
+  ScoreManager.saveScore(quizId, score);
+  // Exibe um resumo dos resultados
+  console.log(`Quiz concluído!\nPontuação: ${score}%\nSua pontuação foi salva.`);
 }
