@@ -1,0 +1,16 @@
+{
+    "chapters": [
+        {
+            "title": "O Ar",
+            "description": "O ar é um elemento essencial para a vida...",
+            "file": "o_ar.json",
+            "questions": 10
+          },
+      {
+        "title": "O Solo Terrestre",
+        "description": "O solo é a camada superficial da crosta terrestre...",
+        "file": "o_solo.json",
+        "questions": 10
+      }
+    ]
+  }

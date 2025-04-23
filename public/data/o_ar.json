@@ -1,0 +1,126 @@
+{
+  "assunto": "O Ar",
+  "resumo": "O ar é um elemento essencial para a vida de todos os seres vivos. Embora não possamos vê-lo, ele está presente em todos os lugares.\n\nA composição do ar inclui gases como:\n* Oxigênio\n* Gás carbônico\n* Nitrogênio\n\nA camada de ar que envolve a Terra é chamada de atmosfera. Ela é dividida em camadas e contém gases e vapor de água.\n\nA umidade do ar aumenta conforme a quantidade de vapor de água no ar.\n\nO ar tem massa, ocupa espaço e pode ser comprimido ou expandido. Ele exerce uma força chamada pressão atmosférica.\n\nEm locais altos, como montanhas, o ar é rarefeito, pois há menos concentração de gases.\n\nOs seres vivos precisam do ar para viver. Animais respiram oxigênio, enquanto plantas utilizam o gás carbônico na fotossíntese para liberar oxigênio no ambiente.",
+  "perguntas": [
+    {
+      "tipo": "unica",
+      "pergunta": "Quais gases estão presentes no ar?",
+      "alternativas": [
+        "Oxigênio, gás carbônico e nitrogênio",
+        "Hidrogênio, oxigênio e vapor de água",
+        "Vapor de água, ozônio e gás natural",
+        "Gás carbônico, cloro e metano"
+      ],
+      "correta": "Oxigênio, gás carbônico e nitrogênio",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "O que é a atmosfera?",
+      "alternativas": [
+        "Uma camada de água",
+        "Uma parte da crosta terrestre",
+        "A camada de ar que envolve a Terra",
+        "O núcleo da Terra"
+      ],
+      "correta": "A camada de ar que envolve a Terra",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "O que acontece com a umidade do ar quando há mais vapor de água?",
+      "alternativas": [
+        "A umidade diminui",
+        "A umidade aumenta",
+        "O ar fica mais seco",
+        "Não muda nada"
+      ],
+      "correta": "A umidade aumenta",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Quais são algumas propriedades do ar?",
+      "alternativas": [
+        "Não tem peso nem volume",
+        "Tem massa, ocupa espaço e pode ser comprimido",
+        "É invisível e sempre quente",
+        "É colorido e leve"
+      ],
+      "correta": "Tem massa, ocupa espaço e pode ser comprimido",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "O que é pressão atmosférica?",
+      "alternativas": [
+        "Peso das plantas sobre o solo",
+        "Força que o ar exerce sobre tudo",
+        "Movimento dos ventos fortes",
+        "Vibração do solo pelo ar"
+      ],
+      "correta": "Força que o ar exerce sobre tudo",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "O que é ar rarefeito?",
+      "alternativas": [
+        "Ar com mais oxigênio",
+        "Ar com menos concentração de gases",
+        "Ar com mais pressão",
+        "Ar muito úmido"
+      ],
+      "correta": "Ar com menos concentração de gases",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Onde encontramos o ar?",
+      "alternativas": [
+        "Apenas nos altos das montanhas",
+        "Somente em áreas urbanas",
+        "Em todos os lugares, mesmo sem vê-lo",
+        "Somente dentro dos pulmões"
+      ],
+      "correta": "Em todos os lugares, mesmo sem vê-lo",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Quem utiliza o oxigênio do ar para sobreviver?",
+      "alternativas": [
+        "Apenas seres humanos",
+        "Apenas plantas",
+        "Todos os seres vivos que respiram",
+        "Somente bactérias"
+      ],
+      "correta": "Todos os seres vivos que respiram",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Como as plantas contribuem para a manutenção do oxigênio no ar?",
+      "alternativas": [
+        "Liberando gás carbônico o tempo todo",
+        "Fazendo fotossíntese e liberando oxigênio",
+        "Respirando o oxigênio e liberando água",
+        "Consumindo todo o ar ao redor"
+      ],
+      "correta": "Fazendo fotossíntese e liberando oxigênio",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "O que acontece com o ar ao ser comprimido?",
+      "alternativas": [
+        "Ele desaparece",
+        "Ele aquece",
+        "Ele ocupa menos espaço",
+        "Ele perde sua massa"
+      ],
+      "correta": "Ele ocupa menos espaço",
+      "pontos": 10
+    }
+  ]
+}

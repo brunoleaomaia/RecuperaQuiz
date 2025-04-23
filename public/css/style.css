@@ -1,0 +1,139 @@
+/* Estilos gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    padding-bottom: 4rem;
+  }
+  
+  /* Animações */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Estilo dos cartões */
+  .card {
+    animation: fadeIn 0.5s ease-in-out;
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+  }
+  
+  .card-header {
+    font-weight: 600;
+  }
+  
+  /* Lista de capítulos */
+  .chapter-list .list-group-item {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-left: 5px solid transparent;
+  }
+  
+  .chapter-list .list-group-item:hover {
+    background-color: #f0f7ff;
+    border-left-color: #0d6efd;
+    transform: translateX(5px);
+  }
+  
+  .chapter-list .list-group-item.active {
+    background-color: #e7f1ff;
+    border-left-color: #0d6efd;
+    color: #0d6efd;
+  }
+  
+  /* Área de resumo */
+  .summary-content {
+    line-height: 1.7;
+    color: #444;
+  }
+  
+  .summary-content ul {
+    padding-left: 20px;
+  }
+  
+  .summary-content li {
+    margin-bottom: 8px;
+  }
+  
+  /* Estilos do Quiz */
+  #options-container button {
+    text-align: left;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-size: 1.05rem;
+  }
+  
+  #options-container button:hover {
+    background-color: #f0f7ff;
+    transform: translateX(5px);
+  }
+  
+  #options-container button.correct-answer {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+  }
+  
+  #options-container button.wrong-answer {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+  }
+  
+  /* Resultados */
+  #final-score {
+    font-weight: bold;
+    color: #0d6efd;
+  }
+  
+  #final-score-container {
+    animation: fadeIn 0.7s ease-in-out;
+  }
+  
+  .shine {
+    animation: bounce 1s ease infinite;
+  }
+  
+  /* Toast personalizado */
+  #feedback-toast {
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+  
+  .toast-success .toast-header {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .toast-error .toast-header {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 576px) {
+    .container {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    
+    #options-container button {
+      font-size: 0.95rem;
+      padding: 10px 12px;
+    }
+    
+    .display-4 {
+      font-size: 2.5rem;
+    }
+  }
+
+  .btn:hover {
+    color: #0d6efd !important; 
+  }
