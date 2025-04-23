@@ -22,7 +22,6 @@ const ScoreManager = {
 
     // Registra uma nova pontuação para um quiz específico
     saveScore: function (quizId, score) {
-        console.log(quizId, score);
         const storage = this.getStorage();
 
         // Se o quiz não existir nos dados, cria um novo registro

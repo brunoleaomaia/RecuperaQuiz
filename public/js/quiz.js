@@ -21,7 +21,6 @@ let chapterFile = null;
 
 // Função para inicializar o quiz
 function initializeQuiz(chapter, file) {
-  console.log(chapter);
   // Reset das variáveis
   currentQuestionIndex = 0;
   score = 0;
@@ -240,6 +239,4 @@ function shuffleArray(array) {
 function finishQuiz(quizId, score) {
   // Salva a pontuação
   ScoreManager.saveScore(quizId, score);
-  // Exibe um resumo dos resultados
-  console.log(`Quiz concluído!\nPontuação: ${score}%\nSua pontuação foi salva.`);
 }
