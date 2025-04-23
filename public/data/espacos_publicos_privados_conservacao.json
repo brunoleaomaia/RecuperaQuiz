@@ -1,0 +1,126 @@
+{
+  "assunto": "Espaços Públicos, Privados e de Conservação Ambiental",
+  "resumo": "Os espaços dos municípios podem ser divididos em públicos e privados, estando tanto na área urbana quanto na rural.\\n\n* Espaços públicos são de uso comum da população e são administrados pelo governo. Exemplos: ruas, praças, escolas, hospitais.\\n\n* Espaços privados pertencem a pessoas ou empresas e são mantidos por seus donos. Exemplos: supermercados, confeitarias, casas.\\n\n* Espaços de conservação ambiental são áreas naturais protegidas pelo município, estado ou governo federal. Exemplos: parques, reservas e florestas.\\n\nEsses espaços são importantes para o lazer, convivência social e preservação da natureza.\\n\nA administração dos espaços públicos é feita pelo governo, enquanto os privados são geridos pelos seus proprietários.\\n\nA conservação ambiental é uma responsabilidade pública essencial para garantir o equilíbrio ecológico e a qualidade de vida.\n",
+  "perguntas": [
+    {
+      "tipo": "unica",
+      "pergunta": "O que são espaços públicos?",
+      "alternativas": [
+        "Espaços de uso comum administrados pelo governo",
+        "Espaços construídos apenas para escolas particulares",
+        "Espaços privados destinados à moradia",
+        "Terrenos abandonados em áreas urbanas"
+      ],
+      "correta": "Espaços de uso comum administrados pelo governo",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Quem é responsável pelos espaços públicos?",
+      "alternativas": [
+        "A população que vive próxima",
+        "Os empresários locais",
+        "O governo municipal, estadual ou federal",
+        "Somente o prefeito"
+      ],
+      "correta": "O governo municipal, estadual ou federal",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual das alternativas representa um espaço privado?",
+      "alternativas": [
+        "Praça",
+        "Escola pública",
+        "Supermercado",
+        "Hospital municipal"
+      ],
+      "correta": "Supermercado",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual é um exemplo de espaço de conservação ambiental?",
+      "alternativas": [
+        "Shopping center",
+        "Parque Tanguá",
+        "Cinema",
+        "Academia"
+      ],
+      "correta": "Parque Tanguá",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "O que caracteriza um espaço privado?",
+      "alternativas": [
+        "É de posse do governo",
+        "Pertence a todos da população",
+        "É de propriedade de uma pessoa ou empresa",
+        "É sempre gratuito"
+      ],
+      "correta": "É de propriedade de uma pessoa ou empresa",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "As escolas podem ser:",
+      "alternativas": [
+        "Apenas públicas",
+        "Apenas privadas",
+        "Públicas ou privadas",
+        "Só municipais"
+      ],
+      "correta": "Públicas ou privadas",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual das opções é uma responsabilidade da esfera pública?",
+      "alternativas": [
+        "Construção de supermercados",
+        "Manutenção de casas",
+        "Proteção de florestas",
+        "Venda de produtos em farmácias"
+      ],
+      "correta": "Proteção de florestas",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Por que é importante conservar os espaços ambientais?",
+      "alternativas": [
+        "Para explorar recursos naturais de forma rápida",
+        "Para garantir lazer apenas às cidades grandes",
+        "Para proteger a natureza e a qualidade de vida",
+        "Para construir mais escolas e hospitais"
+      ],
+      "correta": "Para proteger a natureza e a qualidade de vida",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual alternativa apresenta apenas espaços públicos?",
+      "alternativas": [
+        "Praça, escola pública, hospital municipal",
+        "Supermercado, farmácia, escola particular",
+        "Casa, padaria, banco particular",
+        "Shopping, praça, hospital particular"
+      ],
+      "correta": "Praça, escola pública, hospital municipal",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "O que é destacado como dever do governo em relação aos espaços públicos?",
+      "alternativas": [
+        "Construir casas e vendê-las",
+        "Manter e melhorar os espaços para o uso da população",
+        "Administrar empresas privadas",
+        "Criar supermercados e confeitarias"
+      ],
+      "correta": "Manter e melhorar os espaços para o uso da população",
+      "pontos": 10
+    }
+  ]
+}

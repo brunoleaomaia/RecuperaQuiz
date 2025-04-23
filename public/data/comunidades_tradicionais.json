@@ -1,0 +1,116 @@
+{
+  "assunto": "As Comunidades Indígenas, Ribeirinhas e Quilombolas",
+  "resumo": "As comunidades indígenas, ribeirinhas e quilombolas representam formas tradicionais e diversas de viver em harmonia com a natureza e com a coletividade.\n\n* Comunidades indígenas: são os povos nativos do Brasil, com rica diversidade linguística, formas próprias de organização social e forte conexão com a natureza. Valorizam a coletividade, os saberes ancestrais e o respeito às tradições.\n\n* Comunidades ribeirinhas: vivem nas margens dos rios, como o rio Amazonas. Suas casas são feitas de palafitas, e o rio é a principal fonte de alimentação e renda. Possuem conhecimento sobre pesca, agricultura e ciclos naturais.\n\n* Comunidades quilombolas: formadas por ex-escravizados que fugiam das fazendas e engenhos no período colonial. Viviam em quilombos, em locais de difícil acesso, e lutaram pela liberdade. Atualmente, lutam pelo direito à terra e contra o racismo.\n\nEssas comunidades compartilham o desafio da preservação da natureza e da valorização de suas culturas, mantendo modos de vida sustentáveis e baseados no respeito à terra, à coletividade e à diversidade.",
+  "perguntas": [
+    {
+      "pergunta": "Quem são os povos indígenas?",
+      "alternativas": [
+        "Imigrantes que vieram da Europa",
+        "Povos nativos do Brasil que viviam aqui antes da chegada dos portugueses",
+        "Pessoas que moram na cidade",
+        "Pescadores da região amazônica"
+      ],
+      "correta": "Povos nativos do Brasil que viviam aqui antes da chegada dos portugueses",
+      "pontos": 10
+    },
+    {
+      "pergunta": "Qual é a principal característica das casas das comunidades ribeirinhas?",
+      "alternativas": [
+        "São feitas de concreto",
+        "São subterrâneas",
+        "São palafitas construídas com troncos e outros materiais",
+        "São todas iguais"
+      ],
+      "correta": "São palafitas construídas com troncos e outros materiais",
+      "pontos": 10
+    },
+    {
+      "pergunta": "Onde os quilombos ficavam localizados no período da escravidão?",
+      "alternativas": [
+        "No centro das cidades",
+        "Em regiões costeiras",
+        "Dentro das matas, em locais de difícil acesso",
+        "Ao lado das fazendas"
+      ],
+      "correta": "Dentro das matas, em locais de difícil acesso",
+      "pontos": 10
+    },
+    {
+      "pergunta": "Qual é a principal luta atual das comunidades quilombolas?",
+      "alternativas": [
+        "Construir escolas nas cidades",
+        "Combater o preconceito racial e garantir o direito à terra",
+        "Aumentar a exportação de produtos",
+        "Evitar enchentes"
+      ],
+      "correta": "Combater o preconceito racial e garantir o direito à terra",
+      "pontos": 10
+    },
+    {
+      "pergunta": "O que é valorizado pelas comunidades indígenas?",
+      "alternativas": [
+        "Tecnologia e redes sociais",
+        "Extrativismo de ouro",
+        "Preservação da natureza e tradições culturais",
+        "Comércio internacional"
+      ],
+      "correta": "Preservação da natureza e tradições culturais",
+      "pontos": 10
+    },
+    {
+      "pergunta": "Qual comunidade vive em maior contato com os rios?",
+      "alternativas": [
+        "Comunidade urbana",
+        "Comunidade ribeirinha",
+        "Comunidade quilombola",
+        "Comunidade virtual"
+      ],
+      "correta": "Comunidade ribeirinha",
+      "pontos": 10
+    },
+    {
+      "pergunta": "Como eram chamadas as pessoas que formavam os quilombos?",
+      "alternativas": [
+        "Fazendeiros",
+        "Colonizadores",
+        "Quilombolas",
+        "Imigrantes"
+      ],
+      "correta": "Quilombolas",
+      "pontos": 10
+    },
+    {
+      "pergunta": "O que os ribeirinhos conhecem bem?",
+      "alternativas": [
+        "Tecnologia de computadores",
+        "Influência da Lua e os ciclos naturais",
+        "Política internacional",
+        "Economia urbana"
+      ],
+      "correta": "Influência da Lua e os ciclos naturais",
+      "pontos": 10
+    },
+    {
+      "pergunta": "O que os quilombolas valorizam atualmente?",
+      "alternativas": [
+        "A vida urbana e industrial",
+        "A vida em centros comerciais",
+        "A preservação do território e da cultura afro-brasileira",
+        "A modernização das florestas"
+      ],
+      "correta": "A preservação do território e da cultura afro-brasileira",
+      "pontos": 10
+    },
+    {
+      "pergunta": "Qual dessas alternativas representa uma comunidade que vive em harmonia com a floresta?",
+      "alternativas": [
+        "Comunidade escolar",
+        "Comunidade urbana",
+        "Comunidade ribeirinha",
+        "Comunidade científica"
+      ],
+      "correta": "Comunidade ribeirinha",
+      "pontos": 10
+    }
+  ]
+}

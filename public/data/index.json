@@ -1,6 +1,41 @@
 {
   "chapters": [
     {
+      "title": "História: O que é Comunidade?",
+      "description": "A palavra comunidade significa um grupo de pessoas...",
+      "file": "comunidade.json",
+      "questions": 10
+    },
+    {
+      "title": "História: As Comunidades Indígenas, Ribeirinhas e Quilombolas",
+      "description": "A palavra comunidade significa um grupo de pessoas...",
+      "file": "comunidades_tradicionais.json",
+      "questions": 10
+    },
+    {
+      "title": "História: Municípios",
+      "description": "O Brasil é dividido em estados e municípios...",
+      "file": "municipios.json",
+      "questions": 10
+    },
+    {
+      "title": "História: Os Serviços Ofertados nos Municípios",
+      "description": "Os municípios oferecem diversos serviços...",
+      "file": "servicos_municipios.json",
+      "questions": 10
+    },
+    {
+      "title": "História: A Administração dos Municípios",
+      "description": "A administração dos municípios é organizada por diferentes...",
+      "file": "administracao_municipios.json",
+      "questions": 10
+    },
+    {
+      "title": "História: Espaços Públicos, Privados e de Conservação Ambiental",
+      "description": "Os espaços dos municípios podem ser divididos em públicos e privados...",
+      "file": "espacos_publicos_privados_conservacao.json",
+      "questions": 10
+    },{
       "title": "Ciências: O Universo",
       "description": "O Universo é tudo o que existe. A palavra vem do latim 'universum'...",
       "file": "o_universo.json",
