@@ -1,0 +1,76 @@
+{
+  "titulo": "Vegetação",
+  "resumo": "A vegetação é composta por diferentes tipos de plantas, como árvores, arbustos, gramas e flores, que podem ser observados em ruas, parques e jardins. Algumas plantas são frutíferas e oferecem sombras e alimentos, enquanto outras têm flores coloridas que embelezam o ambiente e atraem animais, como borboletas.\n\nVegetação é todo tipo de vegetal presente sobre o solo, incluindo plantas, árvores, grama e qualquer cobertura vegetal da Terra. Árvores e plantas nas cidades, parques e quintais fazem parte da vegetação, sendo essenciais para a qualidade do ar e a vida humana, pois funcionam como filtros naturais.\n\n* As plantas se adaptam às condições do ambiente, como temperatura e quantidade de água, o que dá origem a diferentes tipos de vegetação.\n* Os cactos são típicos de regiões quentes e secas, como a Caatinga no Nordeste do Brasil.\n* As taigas ou coníferas se desenvolvem em regiões frias e com neve.\n* As florestas tropicais crescem em locais quentes e úmidos e são comuns no Brasil.\n\nO cuidado com o meio ambiente é essencial. Plantar árvores, respeitar a natureza e evitar o desmatamento são atitudes importantes. O desmatamento leva à perda da biodiversidade e afeta negativamente o planeta.\n\n* Exemplos de vegetações do Brasil: Amazônia, Cerrado, Pantanal.\n* A árvore mais velha registrada no Brasil é um jequitibá-rosa com cerca de 3.032 anos, localizado no Parque Estadual do Vassununga, em São Paulo.",
+  "perguntas": [
+    {
+      "tipo": "unica",
+      "pergunta": "O que é considerado vegetação?",
+      "alternativas": ["Apenas árvores", "Apenas grama", "Todo tipo de vegetal presente sobre o solo", "Somente flores coloridas"],
+      "correta": "Todo tipo de vegetal presente sobre o solo",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual é a importância das árvores nas cidades?",
+      "alternativas": ["Servem apenas para decoração", "Aumentam a poluição", "Servem como filtro do ar e melhoram a qualidade de vida", "Atraem insetos perigosos"],
+      "correta": "Servem como filtro do ar e melhoram a qualidade de vida",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Que tipo de vegetação é comum em regiões quentes e secas?",
+      "alternativas": ["Floresta tropical", "Taiga", "Cerrado", "Cactos"],
+      "correta": "Cactos",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual vegetação é comum em regiões com neve?",
+      "alternativas": ["Caatinga", "Pantanal", "Taiga ou Conífera", "Cerrado"],
+      "correta": "Taiga ou Conífera",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "A Floresta Tropical se adapta melhor em quais condições?",
+      "alternativas": ["Lugares secos e frios", "Lugares quentes e chuvosos", "Regiões desérticas", "Áreas polares"],
+      "correta": "Lugares quentes e chuvosos",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual das opções a seguir é um exemplo de vegetação brasileira?",
+      "alternativas": ["Savana africana", "Floresta Boreal", "Caatinga", "Tundra"],
+      "correta": "Caatinga",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Por que as plantas e árvores são diferentes em cada local?",
+      "alternativas": ["Por serem modificadas geneticamente", "Por causa das condições ambientais", "Por escolha do governo", "Porque os animais mudam o ambiente"],
+      "correta": "Por causa das condições ambientais",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual é a árvore mais velha já registrada no Brasil?",
+      "alternativas": ["Um ipê-amarelo", "Um jequitibá-rosa com 3.032 anos", "Uma seringueira", "Um pau-brasil com 500 anos"],
+      "correta": "Um jequitibá-rosa com 3.032 anos",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual a consequência do desmatamento?",
+      "alternativas": ["Aumenta a biodiversidade", "Melhora o clima", "Perda de biodiversidade", "Crescimento da vegetação"],
+      "correta": "Perda de biodiversidade",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Como podemos cuidar do meio ambiente segundo o texto?",
+      "alternativas": ["Jogando lixo nas ruas", "Plantando árvores e respeitando a natureza", "Cortando todas as árvores velhas", "Criando mais estradas"],
+      "correta": "Plantando árvores e respeitando a natureza",
+      "pontos": 10
+    }
+  ]
+}

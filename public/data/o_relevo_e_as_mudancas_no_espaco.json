@@ -1,0 +1,126 @@
+{
+  "titulo": "O relevo e as mudanças no espaço",
+  "resumo": "Ao observarmos a superfície terrestre, percebemos que há áreas com diferentes altitudes. Essas diferenças formam paisagens com morros, serras e montanhas, que compõem o relevo. \n\n* Relevo é o conjunto de formas físicas da superfície da Terra, como colinas, montanhas, vales, planaltos e planícies. \n* Essas formas configuram a paisagem e resultam da elevação e depressão do terreno. \n* A superfície da Terra também é chamada de litosfera. \n\nOs principais tipos de relevo são:\n* Montanha: terreno irregular de grandes altitudes, como as cordilheiras.\n* Planície: terreno plano, com poucas irregularidades e baixas altitudes.\n* Planalto: terreno aplainado, mas com altitudes maiores que as planícies.\n* Depressão: área mais baixa em relação ao entorno. Pode ser:\n  - Relativa: acima do nível do mar.\n  - Absoluta: abaixo do nível do mar.\n\nOs agentes modificadores do relevo são chamados de agentes erosivos:\n* Erosão eólica: causada pelo vento.\n* Erosão pluvial: causada pela água da chuva.\n* Erosão fluvial: causada por rios.\n* Erosão glacial: causada por geleiras.\n* Erosão marinha: causada pelas águas do mar.\n* Erosão antrópica: causada pela ação humana.\n\nEsses agentes desgastam o relevo e transformam a paisagem. O ser humano é um dos maiores responsáveis por essas modificações ao construir ou explorar recursos naturais.",
+  "perguntas": [
+    {
+      "tipo": "unica",
+      "pergunta": "O que é relevo?",
+      "alternativas": [
+        "É o conjunto de formas físicas da superfície terrestre.",
+        "É a camada de ar que envolve a Terra.",
+        "É a quantidade de chuva em uma região.",
+        "É o movimento dos oceanos."
+      ],
+      "correta": "É o conjunto de formas físicas da superfície terrestre.",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual é o nome dado à superfície da Terra?",
+      "alternativas": [
+        "Atmosfera",
+        "Litosfera",
+        "Hidrosfera",
+        "Biosfera"
+      ],
+      "correta": "Litosfera",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual tipo de relevo é caracterizado por ter grandes altitudes e ser irregular?",
+      "alternativas": [
+        "Planalto",
+        "Montanha",
+        "Planície",
+        "Depressão"
+      ],
+      "correta": "Montanha",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual tipo de relevo apresenta poucas irregularidades e baixa altitude?",
+      "alternativas": [
+        "Montanha",
+        "Depressão",
+        "Planalto",
+        "Planície"
+      ],
+      "correta": "Planície",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Como é chamada a depressão que está abaixo do nível do mar?",
+      "alternativas": [
+        "Relativa",
+        "Absoluta",
+        "Intermediária",
+        "Superficial"
+      ],
+      "correta": "Absoluta",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "A erosão causada pela ação do vento é chamada de:",
+      "alternativas": [
+        "Erosão fluvial",
+        "Erosão pluvial",
+        "Erosão eólica",
+        "Erosão glacial"
+      ],
+      "correta": "Erosão eólica",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual agente erosivo é causado pela ação humana?",
+      "alternativas": [
+        "Erosão glacial",
+        "Erosão antrópica",
+        "Erosão marinha",
+        "Erosão pluvial"
+      ],
+      "correta": "Erosão antrópica",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual é o nome da montanha mais alta do mundo?",
+      "alternativas": [
+        "Monte Roraima",
+        "Monte Everest",
+        "Mont Blanc",
+        "Pico da Neblina"
+      ],
+      "correta": "Monte Everest",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual agente erosivo atua com as águas do mar?",
+      "alternativas": [
+        "Erosão pluvial",
+        "Erosão marinha",
+        "Erosão glacial",
+        "Erosão eólica"
+      ],
+      "correta": "Erosão marinha",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual a diferença entre depressão relativa e absoluta?",
+      "alternativas": [
+        "Relativa está abaixo e absoluta acima do nível do mar.",
+        "Relativa está acima e absoluta abaixo do nível do mar.",
+        "Ambas estão acima do nível do mar.",
+        "Ambas estão abaixo do nível do mar."
+      ],
+      "correta": "Relativa está acima e absoluta abaixo do nível do mar.",
+      "pontos": 10
+    }
+  ]
+}
