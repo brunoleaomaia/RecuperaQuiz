@@ -13,6 +13,36 @@
       "questions": 10
     },
     {
+      "title": "2o Bimestre - Português: Verbos e substantivos",
+      "description": "Verbos e substantivos são classes gramaticais...",
+      "file": "verbos_e_substantivos.json",
+      "questions": 10
+    },
+    {
+      "title": "2o Bimestre - Português: Substantivos próprios, comuns e coletivos",
+      "description": "O substantivo é a classe de palavras que nomeia...",
+      "file": "substantivos_proprios_comuns_e_coletivos.json",
+      "questions": 10
+    },
+    {
+      "title": "2o Bimestre - Português: Substantivos Primitivos e Derivados",
+      "description": "Substantivos primitivos: são palavras que não derivam de outras...",
+      "file": "substivos_primitivos_e_derivados.json",
+      "questions": 10
+    },
+    {
+      "title": "2o Bimestre - Português: Substantivos simples e compostos",
+      "description": "Substantivos podem ser classificados em simples e compostos...",
+      "file": "substivos_simples_e_compostos.json",
+      "questions": 10
+    },
+    {
+      "title": "2o Bimestre - Português: Substantivos concretos e abstratos",
+      "description": "A depender do ser que nomeia, o substantivo pode ser concreto ou abstrato...",
+      "file": "substantivos_concretos_e_abstratos.json",
+      "questions": 10
+    },
+    {
       "title": "1o Bimestre - História: O que é Comunidade?",
       "description": "A palavra comunidade significa um grupo de pessoas...",
       "file": "comunidade.json",

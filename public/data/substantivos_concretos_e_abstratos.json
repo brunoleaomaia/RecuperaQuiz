@@ -1,0 +1,91 @@
+{
+  "titulo": "Substantivos concretos e abstratos",
+  "resumo": "A depender do ser que nomeia, o substantivo pode ser concreto ou abstrato.\n* Substantivo concreto: nomeia seres com existência real ou não, como objetos, pessoas, animais e lugares. É possível visualizá-los na mente mesmo que não existam fisicamente.\nExemplos: cachorro, carro, menina, bruxa, cadeira, fada.\n* Substantivo abstrato: nomeia ações, qualidades ou estados que dependem de outros seres para existir. Não são visualizáveis de forma concreta.\nExemplos: beleza, falsidade, fome, alegria, saudade.\nOutros exemplos de substantivos concretos: caderno, avião, celular, colher, dragão, pai, prédio, duende.\nOutros exemplos de substantivos abstratos: verdade, amor, paixão, sono, simplicidade, situação, bondade, sede.\nSeres míticos como fadas, gnomos, bruxas e dragões são considerados concretos pois, mesmo sem existência científica comprovada, podem ser visualizados mentalmente de acordo com a cultura e crenças.\nNo poema \"Valsa das pulgas\", as pulgas dançam animadamente sob a luz da Lua, ouvindo música e interagindo com outros personagens como o cupim, o tatu-bolinha e a joaninha.\nEm outra atividade, o aluno deve circular substantivos abstratos dentre uma lista que inclui termos como: gentileza, ilusão, beleza, vaidade, largura, honestidade, cansaço.\nA canção \"Gentileza\" de Marisa Monte reforça a ideia de que valores como amor, sabedoria e gentileza são fundamentais na sociedade.",
+  "perguntas": [
+    {
+      "tipo": "unica",
+      "pergunta": "Qual das opções representa um substantivo concreto?",
+      "alternativas": ["Alegria", "Cadeira", "Paixão", "Saudade"],
+      "correta": "Cadeira",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "O que caracteriza um substantivo abstrato?",
+      "alternativas": [
+        "Pode ser visualizado na mente com facilidade",
+        "Depende de outro ser para existir",
+        "Sempre tem existência física",
+        "É sempre um objeto real"
+      ],
+      "correta": "Depende de outro ser para existir",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual dos substantivos a seguir é abstrato?",
+      "alternativas": ["Caderno", "Pai", "Sono", "Duende"],
+      "correta": "Sono",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Por que seres como bruxas e dragões são considerados concretos?",
+      "alternativas": [
+        "Porque realmente existem",
+        "Porque são abstratos por natureza",
+        "Porque são visíveis na realidade",
+        "Porque podem ser visualizados mentalmente"
+      ],
+      "correta": "Porque podem ser visualizados mentalmente",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "O substantivo 'verdade' é classificado como:",
+      "alternativas": ["Concreto", "Abstrato", "Comum", "Próprio"],
+      "correta": "Abstrato",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Segundo o texto, o substantivo 'dragão' é:",
+      "alternativas": ["Abstrato", "Imaginário, logo abstrato", "Concreto", "Próprio"],
+      "correta": "Concreto",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "O que acontece no poema 'Valsa das pulgas'?",
+      "alternativas": [
+        "As pulgas brigam entre si",
+        "As pulgas dançam no meio da rua",
+        "As pulgas dormem sob a luz do sol",
+        "As pulgas constroem uma casa"
+      ],
+      "correta": "As pulgas dançam no meio da rua",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Quem toca a valsa no poema?",
+      "alternativas": ["A pulga", "O cupim", "O sabiá", "O tatu-bolinha"],
+      "correta": "O sabiá",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "De acordo com a canção 'Gentileza', o que ficou no muro após apagarem tudo?",
+      "alternativas": ["Alegria e tinta fresca", "Tristeza e tinta fresca", "Esperança e pó", "Sabedoria e silêncio"],
+      "correta": "Tristeza e tinta fresca",
+      "pontos": 10
+    },
+    {
+      "tipo": "unica",
+      "pergunta": "Qual dessas palavras é um substantivo abstrato presente na canção 'Gentileza'?",
+      "alternativas": ["Caderno", "Sabedoria", "Rua", "Circo"],
+      "correta": "Sabedoria",
+      "pontos": 10
+    }
+  ]
+}
