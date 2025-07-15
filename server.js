@@ -1,11 +1,11 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const { execSync } = require('child_process');
+const { generateIndex } = require('./genindex');
 
-// Executa o generate-index.js antes de iniciar o servidor
+// Gera o index.json antes de iniciar o servidor
 try {
-  execSync('node scripts/generate-index.js', { stdio: 'inherit' });
+  generateIndex();
   console.log('index.json atualizado com sucesso.');
 } catch (err) {
   console.error('Erro ao atualizar index.json:', err.message);

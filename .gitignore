@@ -144,8 +144,7 @@ package-lock.json
 **/.DS_Store
 
 #Generated files
-public/generated
-public/generated/*
+public/generated/index.json
 
 #Dev environment files
 uploads/

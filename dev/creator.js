@@ -28,10 +28,11 @@ app.post('/create', upload.array('images'), (req, res) => {
 });
 
 // Salva o JSON enviado em public/data
+const { generateIndex } = require('../genindex');
+
 app.post('/savedata', express.json(), (req, res) => {
   const fs = require('fs');
   const path = require('path');
-  const { exec } = require('child_process');
   const filename = req.body.filename;
   const data = req.body.data;
   if (!filename || !data) {
@@ -41,13 +42,9 @@ app.post('/savedata', express.json(), (req, res) => {
   const filePath = path.join(__dirname, '..', 'public', 'data', safeName);
   try {
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
-    // Executa o script para atualizar o index.json
-    exec('node scripts/generate-index.js', { cwd: path.join(__dirname, '..') }, (error, stdout, stderr) => {
-      if (error) {
-        return res.status(500).json({ error: 'Arquivo salvo, mas erro ao atualizar index.json: ' + stderr });
-      }
-      res.json({ success: true, file: safeName });
-    });
+    // Atualiza o index.json usando o módulo
+    generateIndex();
+    res.json({ success: true, file: safeName });
   } catch (err) {
     res.status(500).json({ error: 'Erro ao salvar arquivo: ' + err.message });
   }
