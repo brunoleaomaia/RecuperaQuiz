@@ -54,10 +54,10 @@ function renderQuizzes(quizzes) {
       <div>
         <h5 class="mb-1">${quiz.title}</h5>
         <small>${quiz.description || 'Click to access the summary and quiz'}</small><br>
-        <span class="badge bg-secondary">${quiz.grade}</span>
-        <span class="badge bg-secondary">${quiz.quarter}</span>
-        <span class="badge bg-secondary">${quiz.subject}</span>
-        <span class="badge bg-secondary"> Capítulo ${quiz.chapter}</span>
+        <span class="badge bg-primary">${quiz.grade}</span>
+        <span class="badge bg-primary bg-opacity-50">${quiz.quarter}</span>
+        <span class="badge bg-success">${quiz.subject}</span>
+        <span class="badge bg-success bg-opacity-50"> Capítulo ${quiz.chapter}</span>
       </div>
       <div class="text-end">
       <span class="badge bg-primary">${quiz.questions || '?'} questions</span><br>
@@ -75,35 +75,52 @@ function renderQuizzes(quizzes) {
 }
 
 function populateFilters(quizzes) {
-  const gradeSet = new Set();
-  const quarterSet = new Set();
-  const subjectSet = new Set();
-  const chapterSet = new Set();
-  quizzes.forEach(q => {
-    if (q.grade) gradeSet.add(q.grade);
-    if (q.quarter) quarterSet.add(q.quarter);
-    if (q.subject) subjectSet.add(q.subject);
-    if (q.chapter) chapterSet.add(q.chapter);
-  });
-  fillSelect('filter-grade', Array.from(gradeSet));
-  fillSelect('filter-quarter', Array.from(quarterSet));
-  fillSelect('filter-subject', Array.from(subjectSet));
-  fillSelect('filter-chapter', Array.from(chapterSet));
+  // Atualiza as opções dos filtros de acordo com a seleção anterior
+  const grade = document.getElementById('filter-grade').value;
+  const quarter = document.getElementById('filter-quarter').value;
+  const subject = document.getElementById('filter-subject').value;
+  const chapter = document.getElementById('filter-chapter').value;
+
+  // Filtro progressivo
+  let filtered = quizzes;
+  if (grade) filtered = filtered.filter(q => q.grade === grade);
+  const quarters = Array.from(new Set(filtered.map(q => q.quarter)));
+  fillSelect('filter-quarter', quarters, quarter);
+
+  filtered = quizzes;
+  if (grade) filtered = filtered.filter(q => q.grade === grade);
+  if (quarter) filtered = filtered.filter(q => q.quarter === quarter);
+  const subjects = Array.from(new Set(filtered.map(q => q.subject)));
+  fillSelect('filter-subject', subjects, subject);
+
+  filtered = quizzes;
+  if (grade) filtered = filtered.filter(q => q.grade === grade);
+  if (quarter) filtered = filtered.filter(q => q.quarter === quarter);
+  if (subject) filtered = filtered.filter(q => q.subject === subject);
+  const chapters = Array.from(new Set(filtered.map(q => q.chapter)));
+  fillSelect('filter-chapter', chapters, chapter);
+
+  // O filtro de grade sempre mostra todas as opções
+  const grades = Array.from(new Set(quizzes.map(q => q.grade)));
+  fillSelect('filter-grade', grades, grade);
 }
 
 function fillSelect(selectId, options) {
   const select = document.getElementById(selectId);
+  const current = select.value;
   select.innerHTML = `<option value="">${select.options[0].textContent}</option>`;
   options.forEach(opt => {
     const option = document.createElement('option');
     option.value = opt;
     option.textContent = opt;
+    if (opt === current) option.selected = true;
     select.appendChild(option);
   });
 }
 
 document.addEventListener('change', function(e) {
   if (e.target.closest('#quiz-filters')) {
+    populateFilters(quizzesCache);
     applyFilters();
   }
 });
@@ -189,6 +206,15 @@ async function loadDefaultChapter() {
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
+  // Botão para limpar filtros
+  document.getElementById('btn-clear-filters').addEventListener('click', () => {
+    document.getElementById('filter-grade').value = '';
+    document.getElementById('filter-quarter').value = '';
+    document.getElementById('filter-subject').value = '';
+    document.getElementById('filter-chapter').value = '';
+    populateFilters(quizzesCache);
+    applyFilters();
+  });
   // Carregar a lista de capítulos
   const indexJson = {
     "chapters": [

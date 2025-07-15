@@ -28,25 +28,30 @@
       <div class="card-body">
         <!-- Filtros -->
         <form id="quiz-filters" class="row g-2 mb-3">
-          <div class="col-md-3">
+          <div class="col-md-2">
             <select class="form-select" id="filter-grade">
               <option value="">Ano Letivo</option>
             </select>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
             <select class="form-select" id="filter-quarter">
               <option value="">Bimestre</option>
             </select>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
             <select class="form-select" id="filter-subject">
               <option value="">Matéria</option>
             </select>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
             <select class="form-select" id="filter-chapter">
               <option value="">Capítulo</option>
             </select>
+          </div>
+          <div class="col-md-4 d-flex align-items-center">
+            <button type="button" id="btn-clear-filters" class="btn btn-light w-100">
+              <i class="bi bi-x-circle"></i> Limpar Filtros
+            </button>
           </div>
         </form>
         <div class="list-group chapter-list mb-3" id="chapter-list">
