@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Creator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+<body class="container py-5">
+  <h2 class="mb-4"><i class="bi bi-pencil-square"></i> Quiz Creator</h2>
+  <form id="creator-form" action="/create" method="post" enctype="multipart/form-data" class="row g-3 mb-4">
+    <div class="col-md-3">
+      <label for="grade" class="form-label">Ano Letivo</label>
+      <select class="form-select" id="grade" name="grade" required>
+        <option value="">Selecione</option>
+        <!-- gradeOptions -->
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label for="quarter" class="form-label">Bimestre</label>
+      <select class="form-select" id="quarter" name="quarter" required>
+        <option value="">Selecione</option>
+        <!-- quarterOptions -->
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label for="subject" class="form-label">Matéria</label>
+      <select class="form-select" id="subject" name="subject" required>
+        <option value="">Selecione</option>
+        <!-- subjectOptions -->
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label for="chapter" class="form-label">Capítulo</label>
+      <input type="number" class="form-control" id="chapter" name="chapter" min="1" required>
+    </div>
+    <div class="col-12">
+      <label for="images" class="form-label">Imagens do capítulo</label>
+      <input type="file" class="form-control" id="images" name="images" accept="image/*" multiple required>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary"><i class="bi bi-upload"></i> Enviar</button>
+    </div>
+  </form>
+  <div id="result-container" class="mt-4"></div>
+  <div id="save-section" class="mt-4" style="display:none;">
+    <div class="input-group mb-2">
+      <span class="input-group-text">Nome do arquivo</span>
+      <input type="text" id="filename-input" class="form-control" value="" />
+    </div>
+    <button id="save-btn" class="btn btn-success"><i class="bi bi-save"></i> Salvar Dados</button>
+  </div>
+  <!-- Modal de confirmação -->
+  <!-- Modal de feedback -->
+  <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="feedbackModalLabel">Mensagem</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="feedbackModalBody"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="confirmSaveModal" tabindex="-1" aria-labelledby="confirmSaveModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="confirmSaveModalLabel">Confirmar Salvamento</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Tem certeza que deseja salvar o arquivo <span id="modal-filename"></span>?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success" id="confirm-save-btn">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Preenche os selects dinamicamente
+    fetch('/dev/index.json')
+      .then(res => res.json())
+      .then(data => {
+        const gradeSelect = document.getElementById('grade');
+        const quarterSelect = document.getElementById('quarter');
+        const subjectSelect = document.getElementById('subject');
+        data.grades.forEach(g => {
+          gradeSelect.insertAdjacentHTML('beforeend', `<option value="${g}">${g}</option>`);
+        });
+        data.quarters.forEach(q => {
+          quarterSelect.insertAdjacentHTML('beforeend', `<option value="${q}">${q}</option>`);
+        });
+        data.subjects.forEach(s => {
+          subjectSelect.insertAdjacentHTML('beforeend', `<option value="${s}">${s}</option>`);
+        });
+      });
+    document.getElementById('creator-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = e.target;
+      var formData = new FormData(form);
+      var resContainer = document.getElementById('result-container');
+      resContainer.innerHTML = '<div class="text-center"><div class="spinner-border text-primary" role="status"></div><p>Processando...</p></div>';
+      axios.post('/create', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      })
+      .then(function(response) {
+        var json = response.data;
+        resContainer.innerHTML = '<h4>JSON Gerado:</h4><pre class="bg-light p-3 border rounded" id="json-preview">' + JSON.stringify(json, null, 2) + '</pre>';
+        // Preenche input de nome sugerido
+        var saveSection = document.getElementById('save-section');
+        var filenameInput = document.getElementById('filename-input');
+        if (json.suggestedfileName) {
+          filenameInput.value = json.suggestedfileName;
+        } else {
+          filenameInput.value = 'quiz.json';
+        }
+        saveSection.style.display = '';
+        // Salva json em window para uso posterior
+        window.lastQuizJson = json;
+      })
+      .catch(function(err) {
+        var msg = (err.response && err.response.data) ? err.response.data : err.message;
+        resContainer.innerHTML = '<div class="alert alert-danger">Erro ao gerar quiz: ' + msg + '</div>';
+        document.getElementById('save-section').style.display = 'none';
+      });
+  // Lógica do botão salvar
+  document.getElementById('save-btn').addEventListener('click', function() {
+    var filename = document.getElementById('filename-input').value.trim();
+    if (!filename) {
+      showFeedback('Informe o nome do arquivo.', 'Atenção');
+      return;
+    }
+    document.getElementById('modal-filename').textContent = filename;
+    var modal = new bootstrap.Modal(document.getElementById('confirmSaveModal'));
+    modal.show();
+  });
+
+  document.getElementById('confirm-save-btn').addEventListener('click', function() {
+    var filename = document.getElementById('filename-input').value.trim();
+    var json = window.lastQuizJson;
+    if (!json) return;
+    json.suggestedfileName = filename;
+    axios.post('/savedata', { filename, data: json })
+      .then(function(resp) {
+        var modal = bootstrap.Modal.getInstance(document.getElementById('confirmSaveModal'));
+        modal.hide();
+        showFeedback('Arquivo salvo com sucesso!', 'Sucesso');
+      })
+      .catch(function(err) {
+        showFeedback('Erro ao salvar arquivo: ' + (err.response?.data || err.message), 'Erro');
+      });
+  });
+
+  function showFeedback(msg, title) {
+    document.getElementById('feedbackModalBody').textContent = msg;
+    document.getElementById('feedbackModalLabel').textContent = title || 'Mensagem';
+    var modal = new bootstrap.Modal(document.getElementById('feedbackModal'));
+    modal.show();
+  }
+    });
+  });
+  </script>
+</body>
+</html>

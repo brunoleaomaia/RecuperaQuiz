@@ -52,12 +52,12 @@ function renderQuizzes(quizzes) {
     listItem.className = 'list-group-item list-group-item-action d-flex justify-content-between align-items-center quiz-card';
     listItem.innerHTML = `
       <div>
-        <h5 class="mb-1">${quiz.title}</h5>
-        <small>${quiz.description || 'Click to access the summary and quiz'}</small><br>
         <span class="badge bg-primary">${quiz.grade}</span>
         <span class="badge bg-primary bg-opacity-50">${quiz.quarter}</span>
         <span class="badge bg-success">${quiz.subject}</span>
         <span class="badge bg-success bg-opacity-50"> Capítulo ${quiz.chapter}</span>
+        <h5 class="mb-1">${quiz.title}</h5>
+        <small>${quiz.description || 'Click to access the summary and quiz'}</small><br>
       </div>
       <div class="text-end">
       <span class="badge bg-primary">${quiz.questions || '?'} questions</span><br>

@@ -1,0 +1,131 @@
+{
+  "suggestedfileName": "substantivos_simples_e_compostos.json",
+  "title": "Substantivos Simples e Compostos",
+  "summary": "Os substantivos podem ser classificados como simples ou compostos. Um substantivo é considerado simples quando é representado por apenas uma palavra, como casa, água, mãe e flor. Já o substantivo composto é formado por mais de uma palavra, como arco-íris, girassol, cavalo-marinho e saca-rolhas.\n\n* Exemplos de substantivos simples incluem: alegria e planeta.\n* Exemplos de substantivos compostos incluem: guarda-chuva, guarda-noturno, estrela-do-mar e cor-de-rosa.\n\nO uso de hífen em substantivos compostos seguiu algumas regras com o Novo Acordo Ortográfico da Língua Portuguesa:\n\n* Usa-se hífen quando a primeira palavra termina em vogal e a segunda começa com a mesma vogal: contra-ataque, micro-ondas, anti-inflamatório.\n* Usa-se hífen quando a segunda palavra começa com -h: anti-higiênico, extra-humano.\n* Usa-se hífen quando a primeira palavra termina com uma consoante e a segunda começa com a mesma consoante: super-resistente, inter-racial.\n* Usa-se hífen com a palavra “mal” quando o segundo elemento começa com L, H ou vogal: mal-educado, mal-humorado.\n\nNo texto narrativo de exemplo, Laura é uma menina que, apesar de forte e valente, tem medo do barulho do trovão. Durante uma visita à casa de sua avó, durante uma tempestade, sua mãe a conforta, explicando que o barulho são nuvens brigando. A mãe utiliza o momento para ensinar que a chuva é benéfica para o crescimento das plantas e flores.",
+  "questions": [
+    {
+      "type": "single",
+      "question": "Como são classificados os substantivos que são formados por apenas uma palavra?",
+      "choices": [
+        "Simples",
+        "Compostos",
+        "Complexos",
+        "Difíceis"
+      ],
+      "correct": "Simples",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual dos seguintes é um exemplo de substantivo composto?",
+      "choices": [
+        "Casa",
+        "Água",
+        "Arco-íris",
+        "Flor"
+      ],
+      "correct": "Arco-íris",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Segundo o Novo Acordo Ortográfico, quando se usa hífen em palavras compostas?",
+      "choices": [
+        "Quando a primeira palavra termina em vogal e a segunda começa com a mesma vogal",
+        "Quando a segunda palavra começa com -h",
+        "Quando a primeira palavra termina com consoante e a segunda começa com a mesma consoante",
+        "Todas as alternativas estão corretas"
+      ],
+      "correct": "Todas as alternativas estão corretas",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "O que a mãe de Laura compara ao barulho do trovão?",
+      "choices": [
+        "Uma tempestade no campo",
+        "Duas pessoas brigando",
+        "Nuvens brigando",
+        "O som do mar"
+      ],
+      "correct": "Nuvens brigando",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual é a situação que causa medo em Laura?",
+      "choices": [
+        "A escuridão",
+        "O barulho do trovão",
+        "Ficar sozinha",
+        "O vento forte"
+      ],
+      "correct": "O barulho do trovão",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual substantivo é considerado simples?",
+      "choices": [
+        "Guarda-chuva",
+        "Saca-rolhas",
+        "Planeta",
+        "Guarda-noturno"
+      ],
+      "correct": "Planeta",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Por que a mãe de Laura diz que a chuva é boa?",
+      "choices": [
+        "Porque limpa a casa",
+        "Porque refresca o ambiente",
+        "Porque ajuda plantas e flores a crescerem",
+        "Porque faz parte da natureza"
+      ],
+      "correct": "Porque ajuda plantas e flores a crescerem",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual regra ortográfica se aplica ao uso do hífen em 'anti-herói'?",
+      "choices": [
+        "Quando a primeira palavra termina em vogal e a segunda começa com vogal",
+        "Quando a segunda palavra começa com -h",
+        "Quando a primeira palavra termina em consoante e a segunda começa com a mesma consoante",
+        "Nenhuma regra se aplica"
+      ],
+      "correct": "Quando a segunda palavra começa com -h",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual a resposta que a mãe dá para Laura quando esta demonstra medo do trovão?",
+      "choices": [
+        "Ignora",
+        "Leva ela para fora",
+        "Explica sobre nuvens brigando",
+        "Dá um brinquedo"
+      ],
+      "correct": "Explica sobre nuvens brigando",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual das seguintes opções inclui ambos substantivos simples e compostos?",
+      "choices": [
+        "Alegria e guarda-chuva",
+        "Papel e água",
+        "Arco-íris e casa",
+        "Flor e chuva"
+      ],
+      "correct": "Alegria e guarda-chuva",
+      "points": 10
+    }
+  ],
+  "grade": "3o Ano",
+  "quarter": "2o Bimestre",
+  "subject": "Português",
+  "chapter": "4"
+}

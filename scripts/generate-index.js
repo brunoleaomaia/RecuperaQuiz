@@ -38,6 +38,15 @@ function main() {
       console.error('Erro ao ler', file, e);
     }
   });
+  quizzes.sort((a, b) => {
+    // Ordena por grade, quarter, subject, chapter (todos string)
+    return (
+      (a.grade || '').localeCompare(b.grade || '') ||
+      (a.quarter || '').localeCompare(b.quarter || '') ||
+      (a.subject || '').localeCompare(b.subject || '') ||
+      (a.chapter || '').localeCompare(b.chapter || '')
+    );
+  });
   fs.writeFileSync(outputFile, JSON.stringify({ quizzes }, null, 2), 'utf8');
   console.log('Arquivo index.json gerado em', outputFile);
 }

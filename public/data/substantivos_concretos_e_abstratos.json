@@ -1,0 +1,131 @@
+{
+  "suggestedfileName": "substantivos_concretos_e_abstratos.json",
+  "title": "Substantivos Concretos e Abstratos",
+  "summary": "Neste capítulo, exploramos a classificação dos substantivos em concretos e abstratos. \nOs substantivos concretos nomeiam seres de existência real ou imaginária, como objetos, animais e pessoas, que podem ser visualizados mesmo que não existam de fato. Exemplos incluem cachorro, carro e fada.\n\nSubstantivos abstratos referem-se a ações, qualidades e estados que dependem de outros seres para existir e não podem ser facilmente visualizados. Exemplos são beleza, fome e alegria.\n\n* Seres míticos, como fadas e dragões, são considerados concretos devido à possibilidade de visualizá-los em nossa cultura, apesar de não serem cientificamente comprovados.\n\nAdicionalmente, foi apresentado um poema, 'Valsa das pulgas' de Ruth Rocha, que fornece um exemplo criativo da aplicação de substantivos concretos em um contexto literário.",
+  "questions": [
+    {
+      "type": "single",
+      "question": "O que são substantivos concretos?",
+      "choices": [
+        "Nomeiam ações, qualidades e estados",
+        "Nomeiam seres de existência real ou imaginária",
+        "Dependem de outros seres para existir",
+        "Não podem ser visualizados"
+      ],
+      "correct": "Nomeiam seres de existência real ou imaginária",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual é um exemplo de substantivo abstrato?",
+      "choices": [
+        "Cachorro",
+        "Carro",
+        "Beleza",
+        "Fada"
+      ],
+      "correct": "Beleza",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Quais seres são considerados substantivos concretos?",
+      "choices": [
+        "Sentimentos",
+        "Qualidades",
+        "Dragões e fadas",
+        "Estados"
+      ],
+      "correct": "Dragões e fadas",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Por que os seres míticos são considerados concretos?",
+      "choices": [
+        "Porque existem cientificamente",
+        "Porque não são visualizáveis",
+        "Porque podem ser visualizados culturalmente",
+        "Porque dependem de outros para existir"
+      ],
+      "correct": "Porque podem ser visualizados culturalmente",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "O que é um substantivo abstrato?",
+      "choices": [
+        "Nomeia seres de existência real",
+        "Nomeia seres visualizáveis",
+        "Nomeia ações, qualidades e estados",
+        "Nomeia objetos físicos"
+      ],
+      "correct": "Nomeia ações, qualidades e estados",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual opção representa um substantivo concreto?",
+      "choices": [
+        "Amor",
+        "Tristeza",
+        "Caderno",
+        "Liberdade"
+      ],
+      "correct": "Caderno",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Como os substantivos abstratos são definidos?",
+      "choices": [
+        "Dependem de seres para existir",
+        "Existem de forma independente",
+        "São sempre tangíveis",
+        "Nomeiam apenas objetos"
+      ],
+      "correct": "Dependem de seres para existir",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "São exemplos de substantivos abstratos:",
+      "choices": [
+        "Fada, cadeira",
+        "Alegria, fome",
+        "Carro, dragão",
+        "Cachorro, menina"
+      ],
+      "correct": "Alegria, fome",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Os substantivos que podemos visualizar mentalmente são:",
+      "choices": [
+        "Qualidades",
+        "Abstratos",
+        "Concretos",
+        "Estados"
+      ],
+      "correct": "Concretos",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual é a diferença entre substantivos concretos e abstratos?",
+      "choices": [
+        "Concretos dependem de outros seres, abstratos não",
+        "Concretos são tangíveis, abstratos não",
+        "Abstratos têm existência real, concretos não",
+        "Abstratos são sempre reconhecidos cientificamente"
+      ],
+      "correct": "Concretos são tangíveis, abstratos não",
+      "points": 10
+    }
+  ],
+  "grade": "3o Ano",
+  "quarter": "2o Bimestre",
+  "subject": "Português",
+  "chapter": "5"
+}

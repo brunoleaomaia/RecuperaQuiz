@@ -62,11 +62,16 @@ RecuperaQuiz/
    ```
    node scripts/generate-index.js
    ```
-4. Inicie o servidor:
+4. (Opcional) Configure a porta do servidor principal criando um arquivo `.env` na raiz do projeto:
+   ```
+   PORT=3000
+   ```
+   Se não definido, o padrão será 3000.
+5. Inicie o servidor:
    ```
    npm start
    ```
-5. Acesse a aplicação em seu navegador:
+6. Acesse a aplicação em seu navegador:
    ```
    http://localhost:3000
    ```
@@ -107,3 +112,37 @@ RecuperaQuiz/
 ## Licença
 
 MIT
+
+## Opções de Desenvolvimento (Dev)
+
+### Quiz Creator (OCR + IA)
+
+O projeto inclui uma ferramenta de desenvolvimento para criar quizzes automaticamente a partir de imagens de capítulos de livros, usando OCR e IA (GPT):
+
+- Interface web: `/dev/creator.html` (executada por um servidor Express próprio)
+- Backend: `/dev/creator.js` (executa OCR, chama GPT, salva JSON e atualiza o índice)
+- Configuração de variáveis: `/dev/.env` (veja `/dev/.env_sample`)
+
+#### Como usar o Quiz Creator
+
+1. Instale as dependências extras para dev:
+   ```
+   npm install tesseract.js openai node-fetch multer dotenv
+   ```
+2. Configure a chave da OpenAI em `/dev/.env`:
+   ```
+   OPENAI_API_KEY=sua-chave-aqui
+   CREATOR_PORT=3001
+   ```
+3. Inicie o servidor de desenvolvimento:
+   ```
+   node dev/creator.js
+   ```
+4. Acesse a interface de criação em:
+   ```
+   http://localhost:3001
+   ```
+5. Preencha os metadados, envie imagens do capítulo e gere o quiz automaticamente.
+6. Edite o JSON gerado se necessário e salve. O arquivo será salvo em `public/data/` e o índice será atualizado automaticamente.
+
+> **Observação:** O fluxo de dev não é necessário para uso normal do app, apenas para facilitar a criação de novos quizzes por OCR/IA.

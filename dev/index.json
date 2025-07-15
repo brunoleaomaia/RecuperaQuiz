@@ -1,0 +1,5 @@
+{
+  "grades": ["1o Ano", "2o Ano", "3o Ano", "4o Ano", "5o Ano", "6o Ano", "7o Ano", "8o Ano", "9o Ano", "10o Ano", "11o Ano", "12o Ano"],
+  "quarters": ["1o Bimestre", "2o Bimestre", "3o Bimestre", "4o Bimestre"],
+  "subjects": ["Ciências", "Geografia", "História", "Português", "Matemática", "Inglês", "Artes", "Educação Física"]
+}

@@ -146,3 +146,12 @@ package-lock.json
 #Generated files
 public/generated
 public/generated/*
+
+#Dev environment files
+uploads/
+dev/.env
+por.traineddata
+
+# Environment variable files
+.env
+
