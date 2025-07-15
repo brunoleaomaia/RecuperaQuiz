@@ -141,3 +141,8 @@ package-lock.json
 #DS
 .DS_Store
 .DS_Store?
+**/.DS_Store
+
+#Generated files
+public/generated
+public/generated/*
