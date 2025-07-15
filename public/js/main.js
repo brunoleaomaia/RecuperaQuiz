@@ -15,57 +15,15 @@ const btnReturnHome = document.getElementById('btn-return-home');
 let currentChapter = null;
 let currentChapterFile = null;
 
+let quizzesCache = [];
+
 // Função para carregar a lista de quizzes
 async function loadQuizzesList() {
   try {
     const response = await axios.get('/generated/index.json');
-    const quizzes = response.data.quizzes;
-    
-    // Limpar o conteúdo anterior
-    chapterList.innerHTML = '';
-    
-    // Se não há quizzes disponíveis
-    if (!quizzes || quizzes.length === 0) {
-      chapterList.innerHTML = `
-        <div class="alert alert-info" role="alert">
-          No quizzes available at the moment.
-        </div>
-      `;
-      return;
-    }
-    
-    // Adicionar cada quiz à lista
-    quizzes.forEach(quiz => {
-      const listItem = document.createElement('a');
-      listItem.setAttribute('data-quiz-id', quiz.file);
-      listItem.href = '#';
-      listItem.className = 'list-group-item list-group-item-action d-flex justify-content-between align-items-center quiz-card';
-      listItem.innerHTML = `
-        <div>
-          <h5 class="mb-1">${quiz.title}</h5>
-          <small>${quiz.description || 'Click to access the summary and quiz'}</small><br>
-          <span class="badge bg-secondary">${quiz.grade}</span>
-          <span class="badge bg-secondary">${quiz.quarter}</span>
-          <span class="badge bg-secondary">${quiz.subject}</span>
-          <span class="badge bg-secondary">${quiz.chapter}</span>
-        </div>
-        <div class="text-end">
-        <span class="badge bg-primary">${quiz.questions || '?'} questions</span><br>
-        <i class="bi bi-puzzle-fill text-info"></i> <span class="badge bg-info quiz-stats-attempts">000</span><br>
-        <i class="bi bi-arrow-up-right-square text-success"></i> <span class="badge bg-success quiz-stats-max">000</span><br>
-        <i class="bi bi-arrow-down-right-square text-secondary text-opacity-75"></i> <span class="badge bg-secondary bg-opacity-50 quiz-stats-min">000</span><br>
-        </div>
-      `;
-      
-      // Adicionar evento de clique para abrir o resumo
-      listItem.addEventListener('click', (e) => {
-        e.preventDefault();
-        loadChapterSummary(quiz.file);
-      });
-      
-      chapterList.appendChild(listItem);
-    });
-    
+    quizzesCache = response.data.quizzes;
+    renderQuizzes(quizzesCache);
+    populateFilters(quizzesCache);
   } catch (error) {
     console.error('Erro ao carregar a lista de quizzes:', error);
     chapterList.innerHTML = `
@@ -75,6 +33,93 @@ async function loadQuizzesList() {
     `;
   }
   updateQuizListWithScores();
+}
+
+function renderQuizzes(quizzes) {
+  chapterList.innerHTML = '';
+  if (!quizzes || quizzes.length === 0) {
+    chapterList.innerHTML = `
+      <div class="alert alert-info" role="alert">
+        No quizzes available at the moment.
+      </div>
+    `;
+    return;
+  }
+  quizzes.forEach(quiz => {
+    const listItem = document.createElement('a');
+    listItem.setAttribute('data-quiz-id', quiz.file);
+    listItem.href = '#';
+    listItem.className = 'list-group-item list-group-item-action d-flex justify-content-between align-items-center quiz-card';
+    listItem.innerHTML = `
+      <div>
+        <h5 class="mb-1">${quiz.title}</h5>
+        <small>${quiz.description || 'Click to access the summary and quiz'}</small><br>
+        <span class="badge bg-secondary">${quiz.grade}</span>
+        <span class="badge bg-secondary">${quiz.quarter}</span>
+        <span class="badge bg-secondary">${quiz.subject}</span>
+        <span class="badge bg-secondary"> Capítulo ${quiz.chapter}</span>
+      </div>
+      <div class="text-end">
+      <span class="badge bg-primary">${quiz.questions || '?'} questions</span><br>
+      <i class="bi bi-puzzle-fill text-info"></i> <span class="badge bg-info quiz-stats-attempts">000</span><br>
+      <i class="bi bi-arrow-up-right-square text-success"></i> <span class="badge bg-success quiz-stats-max">000</span><br>
+      <i class="bi bi-arrow-down-right-square text-secondary text-opacity-75"></i> <span class="badge bg-secondary bg-opacity-50 quiz-stats-min">000</span><br>
+      </div>
+    `;
+    listItem.addEventListener('click', (e) => {
+      e.preventDefault();
+      loadChapterSummary(quiz.file);
+    });
+    chapterList.appendChild(listItem);
+  });
+}
+
+function populateFilters(quizzes) {
+  const gradeSet = new Set();
+  const quarterSet = new Set();
+  const subjectSet = new Set();
+  const chapterSet = new Set();
+  quizzes.forEach(q => {
+    if (q.grade) gradeSet.add(q.grade);
+    if (q.quarter) quarterSet.add(q.quarter);
+    if (q.subject) subjectSet.add(q.subject);
+    if (q.chapter) chapterSet.add(q.chapter);
+  });
+  fillSelect('filter-grade', Array.from(gradeSet));
+  fillSelect('filter-quarter', Array.from(quarterSet));
+  fillSelect('filter-subject', Array.from(subjectSet));
+  fillSelect('filter-chapter', Array.from(chapterSet));
+}
+
+function fillSelect(selectId, options) {
+  const select = document.getElementById(selectId);
+  select.innerHTML = `<option value="">${select.options[0].textContent}</option>`;
+  options.forEach(opt => {
+    const option = document.createElement('option');
+    option.value = opt;
+    option.textContent = opt;
+    select.appendChild(option);
+  });
+}
+
+document.addEventListener('change', function(e) {
+  if (e.target.closest('#quiz-filters')) {
+    applyFilters();
+  }
+});
+
+function applyFilters() {
+  let filtered = quizzesCache;
+  const grade = document.getElementById('filter-grade').value;
+  const quarter = document.getElementById('filter-quarter').value;
+  const subject = document.getElementById('filter-subject').value;
+  const chapter = document.getElementById('filter-chapter').value;
+  if (grade) filtered = filtered.filter(q => q.grade === grade);
+  if (quarter) filtered = filtered.filter(q => q.quarter === quarter);
+  if (subject) filtered = filtered.filter(q => q.subject === subject);
+  if (chapter) filtered = filtered.filter(q => q.chapter === chapter);
+  renderQuizzes(filtered);
+// Removido fechamento de chave extra
 }
 
 // Função para carregar o resumo de um capítulo
