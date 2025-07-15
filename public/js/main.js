@@ -206,6 +206,23 @@ async function loadDefaultChapter() {
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
+  // Botão de lixeira para limpar pontuação
+  document.getElementById('btn-clear-score').addEventListener('click', () => {
+    const modal = new bootstrap.Modal(document.getElementById('modalClearScore'));
+    modal.show();
+  });
+
+  document.getElementById('btn-confirm-clear-score').addEventListener('click', () => {
+    // Limpa a pontuação do ScoreManager
+    if (window.ScoreManager && typeof window.ScoreManager.clearScore === 'function') {
+      window.ScoreManager.clearScore();
+    }
+    updateQuizListWithScores();
+    // Fecha o modal
+    const modal = bootstrap.Modal.getInstance(document.getElementById('modalClearScore'));
+    if (modal) modal.hide();
+    showFeedbackToast('Pontuação', 'Pontuação limpa com sucesso!', true);
+  });
   // Botão para limpar filtros
   document.getElementById('btn-clear-filters').addEventListener('click', () => {
     document.getElementById('filter-grade').value = '';

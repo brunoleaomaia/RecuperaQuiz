@@ -78,13 +78,19 @@ const ScoreManager = {
     getTotalScore: function () {
         const storage = this.getStorage();
         return storage.totalScore;
+    },
+
+    // Limpa toda a pontuação
+    clearScore: function () {
+        localStorage.removeItem('recQuizScores');
+        this.initStorage();
     }
 };
 
 // Inicializa o sistema de pontuação ao carregar a página
 document.addEventListener('DOMContentLoaded', function () {
+    window.ScoreManager = ScoreManager
     ScoreManager.initStorage();
-    //updateQuizListWithScores();
 });
 
 // Função para atualizar a lista de quizzes com as pontuações
