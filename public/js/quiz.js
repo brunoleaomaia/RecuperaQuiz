@@ -29,10 +29,10 @@ function initializeQuiz(chapter, file) {
   chapterFile = file;
   
   // Configurar título
-  quizTitle.textContent = `Quiz: ${chapter.assunto}`;
+  quizTitle.textContent = `Quiz: ${chapter.title}`;
   
   // Preparar perguntas (embaralhando-as)
-  questions = [...chapter.perguntas];
+  questions = [...chapter.questions];
   shuffleArray(questions);
   totalQuestions = questions.length;
   
@@ -54,7 +54,6 @@ function loadQuestion() {
     } else {
       // Se não há mais perguntas (ou já revisou as incorretas), mostrar resultados
       showResults();
-
     }
     return;
   }
@@ -63,13 +62,13 @@ function loadQuestion() {
   const question = questions[currentQuestionIndex];
   
   // Atualizar o texto da pergunta
-  questionText.textContent = question.pergunta;
+  questionText.textContent = question.question;
   
   // Limpar opções anteriores
   optionsContainer.innerHTML = '';
   
   // Criar uma cópia das alternativas para embaralhar
-  const shuffledOptions = [...question.alternativas];
+  const shuffledOptions = [...question.choices];
   shuffleArray(shuffledOptions);
   
   // Adicionar as opções
@@ -80,7 +79,7 @@ function loadQuestion() {
     
     // Adicionar evento de clique para verificar resposta
     button.addEventListener('click', () => {
-      checkAnswer(button, option, question.correta, question.pontos);
+      checkAnswer(button, option, question.correct, question.points);
     });
     
     optionsContainer.appendChild(button);

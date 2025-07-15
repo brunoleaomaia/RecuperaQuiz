@@ -15,38 +15,42 @@ const btnReturnHome = document.getElementById('btn-return-home');
 let currentChapter = null;
 let currentChapterFile = null;
 
-// Função para carregar a lista de capítulos
-async function loadChaptersList() {
+// Função para carregar a lista de quizzes
+async function loadQuizzesList() {
   try {
-    const response = await axios.get('/data/index.json');
-    const chapters = response.data.chapters;
+    const response = await axios.get('/generated/index.json');
+    const quizzes = response.data.quizzes;
     
     // Limpar o conteúdo anterior
     chapterList.innerHTML = '';
     
-    // Se não há capítulos disponíveis
-    if (!chapters || chapters.length === 0) {
+    // Se não há quizzes disponíveis
+    if (!quizzes || quizzes.length === 0) {
       chapterList.innerHTML = `
         <div class="alert alert-info" role="alert">
-          Nenhum capítulo disponível no momento.
+          No quizzes available at the moment.
         </div>
       `;
       return;
     }
     
-    // Adicionar cada capítulo à lista
-    chapters.forEach(chapter => {
+    // Adicionar cada quiz à lista
+    quizzes.forEach(quiz => {
       const listItem = document.createElement('a');
-      listItem.setAttribute('data-quiz-id', chapter.file);
+      listItem.setAttribute('data-quiz-id', quiz.file);
       listItem.href = '#';
       listItem.className = 'list-group-item list-group-item-action d-flex justify-content-between align-items-center quiz-card';
       listItem.innerHTML = `
         <div>
-          <h5 class="mb-1">${chapter.title}</h5>
-          <small>${chapter.description || 'Clique para acessar o resumo e o quiz'}</small>
+          <h5 class="mb-1">${quiz.title}</h5>
+          <small>${quiz.description || 'Click to access the summary and quiz'}</small><br>
+          <span class="badge bg-secondary">${quiz.grade}</span>
+          <span class="badge bg-secondary">${quiz.quarter}</span>
+          <span class="badge bg-secondary">${quiz.subject}</span>
+          <span class="badge bg-secondary">${quiz.chapter}</span>
         </div>
         <div class="text-end">
-        <span class="badge bg-primary">${chapter.questions || '?'} perguntas</span><br>
+        <span class="badge bg-primary">${quiz.questions || '?'} questions</span><br>
         <i class="bi bi-puzzle-fill text-info"></i> <span class="badge bg-info quiz-stats-attempts">000</span><br>
         <i class="bi bi-arrow-up-right-square text-success"></i> <span class="badge bg-success quiz-stats-max">000</span><br>
         <i class="bi bi-arrow-down-right-square text-secondary text-opacity-75"></i> <span class="badge bg-secondary bg-opacity-50 quiz-stats-min">000</span><br>
@@ -56,17 +60,17 @@ async function loadChaptersList() {
       // Adicionar evento de clique para abrir o resumo
       listItem.addEventListener('click', (e) => {
         e.preventDefault();
-        loadChapterSummary(chapter.file);
+        loadChapterSummary(quiz.file);
       });
       
       chapterList.appendChild(listItem);
     });
     
   } catch (error) {
-    console.error('Erro ao carregar a lista de capítulos:', error);
+    console.error('Erro ao carregar a lista de quizzes:', error);
     chapterList.innerHTML = `
       <div class="alert alert-danger" role="alert">
-        Erro ao carregar a lista de capítulos. Por favor, tente novamente mais tarde.
+        Error loading the list of quizzes. Please try again later.
       </div>
     `;
   }
@@ -81,14 +85,14 @@ async function loadChapterSummary(chapterFile) {
     currentChapterFile = chapterFile;
     
     // Atualizar o título e o conteúdo do resumo
-    summaryTitle.textContent = currentChapter.assunto;
+    summaryTitle.textContent = currentChapter.title;
     
     // Processar o conteúdo do resumo (convertendo quebras de linha e listas)
-    const resumo = currentChapter.resumo;
+    const summary = currentChapter.summary;
     let htmlContent = '';
     
     // Dividir por parágrafos
-    const paragraphs = resumo.split('\n\n');
+    const paragraphs = summary.split('\n\n');
     
     paragraphs.forEach(paragraph => {
       // Verificar se o parágrafo contém uma lista
@@ -134,7 +138,7 @@ async function loadDefaultChapter() {
   } catch (error) {
     console.error('Erro ao carregar capítulo padrão:', error);
     // Em caso de erro, tentar carregar a lista de capítulos
-    loadChaptersList();
+    loadQuizzesList();
   }
 }
 
@@ -154,14 +158,14 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Criar o arquivo index.json com o conteúdo padrão
   try {
-    fetch('/data/index.json')
+    fetch('/generated/index.json')
       .then(response => {
         if (!response.ok) {
           // Se o arquivo não existir, carregue o capítulo padrão
           loadDefaultChapter();
         } else {
           // Se o arquivo existir, carregue a lista de capítulos
-          loadChaptersList();
+          loadQuizzesList();
         }
       })
       .catch(() => {
@@ -201,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
   btnReturnHome.addEventListener('click', () => {
     resultsContainer.classList.add('d-none');
     chapterSelector.classList.remove('d-none');
-    loadChaptersList();
+    loadQuizzesList();
   });
 });
 
