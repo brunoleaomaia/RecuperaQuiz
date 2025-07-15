@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "creator": "nodemon dev/creator.js"
+    "creator": "nodemon dev/creator.js",
+    "build": "node scripts/generate-index.js"
   },
   "keywords": [
     "quiz",
