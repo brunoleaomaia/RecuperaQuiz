@@ -1,0 +1,131 @@
+{
+  "suggestedfileName": "genero_textual_legenda.json",
+  "title": "Gênero Textual: Legenda",
+  "summary": "O gênero textual notícia é familiar e inclui elementos como título principal, título auxiliar, lide e corpo da notícia. Neste capítulo, o foco é na legenda, que serve para descrever elementos de uma foto e retomar informações mencionadas anteriormente, aprofundando o assunto brevemente. As legendas consistem, geralmente, de frases curtas que respondem perguntas como 'quem são?' 'onde?' 'como?' e 'quando?'.<br><br>Características das legendas:<br>* Organizadas por frases curtas.<br>* Expressas por linguagem clara e objetiva.<br>* Descrevem uma imagem.<br><br>A legenda difere da notícia e da reportagem, fazendo parte de ambas. Ela introduz ou contextualiza, de forma curta, clara e objetiva (na notícia) ou de maneira mais aprofundada e técnica (na reportagem), o assunto abordado.<br><br>As legendas são mensagens curtas e objetivas que ajudam o leitor a identificar rapidamente o assunto. Elas podem fazer parte de notícias e reportagens.",
+  "questions": [
+    {
+      "type": "single",
+      "question": "Qual é a função principal de uma legenda em uma notícia?",
+      "choices": [
+        "Descrever os elementos de uma foto",
+        "Fornecer um título ao artigo",
+        "Apresentar o autor",
+        "Substituir o lide da notícia"
+      ],
+      "correct": "Descrever os elementos de uma foto",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Quais são as características de uma legenda bem elaborada?",
+      "choices": [
+        "Longa e detalhada",
+        "Curta e objetiva",
+        "Formada apenas por imagens",
+        "Descreve o autor"
+      ],
+      "correct": "Curta e objetiva",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Em qual situação a necessidade de legenda é mais evidente?",
+      "choices": [
+        "Em textos literários",
+        "Em imagens que precisam de clareza",
+        "Em tabelas numéricas",
+        "Em entrevistas"
+      ],
+      "correct": "Em imagens que precisam de clareza",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "As legendas respondem a quais perguntas normalmente?",
+      "choices": [
+        "Quem são?",
+        "Onde?",
+        "Como?",
+        "Todas as anteriores"
+      ],
+      "correct": "Todas as anteriores",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "A legenda faz parte de qual gênero textual?",
+      "choices": [
+        "Somente de reportagens",
+        "Somente de notícias",
+        "De ambos, notícias e reportagens",
+        "Somente de editoriais"
+      ],
+      "correct": "De ambos, notícias e reportagens",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Por que as legendas são importantes em um conteúdo visual?",
+      "choices": [
+        "Tornam o texto mais longo",
+        "Confundem o leitor",
+        "Ajudam a identificar rapidamente o assunto",
+        "Substituem o título"
+      ],
+      "correct": "Ajudam a identificar rapidamente o assunto",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual das seguintes opções não é uma característica de uma legenda?",
+      "choices": [
+        "Frases curtas",
+        "Linguagem objetiva",
+        "Descrição de imagem",
+        "Narrativa extensa"
+      ],
+      "correct": "Narrativa extensa",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Como as legendas se diferem do corpo principal de uma notícia?",
+      "choices": [
+        "São mais longas",
+        "Aprofundam o assunto de forma técnica",
+        "Introduzem ou contextualizam de forma curta e objetiva",
+        "Substituem o título principal"
+      ],
+      "correct": "Introduzem ou contextualizam de forma curta e objetiva",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "O que as legendas e o lide de uma notícia têm em comum?",
+      "choices": [
+        "Ambos são formados por frases longas",
+        "Ambos querem substituir o autor da notícia",
+        "Ambos respondem perguntas básicas sobre o evento",
+        "Nenhuma das opções"
+      ],
+      "correct": "Ambos respondem perguntas básicas sobre o evento",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual é o objetivo final de uma legenda dentro da reportagem?",
+      "choices": [
+        "Aumentar o número de palavras da reportagem",
+        "Equiparar-se ao título principal",
+        "Contextualizar de forma curta e clara o assunto da imagem",
+        "Destacar o nome do autor"
+      ],
+      "correct": "Contextualizar de forma curta e clara o assunto da imagem",
+      "points": 10
+    }
+  ],
+  "grade": "3o Ano",
+  "quarter": "3o Bimestre",
+  "subject": "Português",
+  "chapter": "2"
+}

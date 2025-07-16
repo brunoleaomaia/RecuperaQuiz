@@ -43,13 +43,29 @@
       <button type="submit" class="btn btn-primary"><i class="bi bi-upload"></i> Enviar</button>
     </div>
   </form>
-  <div id="result-container" class="mt-4"></div>
+  <div id="gallery-container" class="mb-4"></div>
+  <div id="spinner-container" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:2000;background:rgba(255,255,255,0.85);align-items:center;justify-content:center;"></div>
+  <div id="edit-fields" class="mt-4" style="display:none;">
+    <div class="mb-2">
+      <label for="edit-title" class="form-label">Título</label>
+      <input type="text" id="edit-title" class="form-control" />
+    </div>
+    <div class="mb-2">
+      <label for="edit-summary" class="form-label">Resumo</label>
+      <textarea id="edit-summary" class="form-control" rows="4"></textarea>
+    </div>
+    <div class="mb-2">
+      <label for="edit-json" class="form-label">JSON</label>
+      <div id="edit-json" style="height: 300px; width: 100%; border: 1px solid #ced4da; border-radius: 0.375rem;"></div>
+      <div class="form-text">Você pode editar o JSON completo. Alterações nos campos acima também atualizam este campo.</div>
+    </div>
+  </div>
   <div id="save-section" class="mt-4" style="display:none;">
     <div class="input-group mb-2">
       <span class="input-group-text">Nome do arquivo</span>
       <input type="text" id="filename-input" class="form-control" value="" />
+      <button id="save-btn" class="btn btn-success"><i class="bi bi-save"></i> Salvar Dados</button>
     </div>
-    <button id="save-btn" class="btn btn-success"><i class="bi bi-save"></i> Salvar Dados</button>
   </div>
   <!-- Modal de confirmação -->
   <!-- Modal de feedback -->
@@ -86,6 +102,11 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ace-builds@1.32.3/src-min-noconflict/ace.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ace-builds@1.32.3/src-min-noconflict/mode-json.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ace-builds@1.32.3/src-min-noconflict/theme-github.js"></script>
   <script>
   document.addEventListener('DOMContentLoaded', function() {
     // Preenche os selects dinamicamente
@@ -105,33 +126,120 @@
           subjectSelect.insertAdjacentHTML('beforeend', `<option value="${s}">${s}</option>`);
         });
       });
+    // Galeria de fotos - preview antes do envio
+    var imagesInput = document.getElementById('images');
+    var galleryContainer = document.getElementById('gallery-container');
+    var glightbox;
+    imagesInput.addEventListener('change', function(e) {
+      var files = Array.from(e.target.files);
+      galleryContainer.innerHTML = '';
+      if (files.length === 0) return;
+      var galleryHtml = '<div class="row g-2">';
+      files.forEach(function(file, idx) {
+        if (!file.type.startsWith('image/')) return;
+        var url = URL.createObjectURL(file);
+        galleryHtml += `
+          <div class="col-6 col-md-3">
+            <a href="${url}" class="glightbox" data-gallery="quiz-gallery" data-title="${file.name}" data-type="image">
+              <img src="${url}" class="img-fluid rounded border" style="cursor:pointer;object-fit:cover;height:120px;width:100%;" alt="${file.name}" />
+            </a>
+          </div>
+        `;
+      });
+      galleryHtml += '</div>';
+      galleryContainer.innerHTML = galleryHtml;
+      // Inicializa/atualiza GLightbox
+      if (glightbox) glightbox.destroy();
+      glightbox = GLightbox({ selector: '.glightbox' });
+    });
+
     document.getElementById('creator-form').addEventListener('submit', function(e) {
       e.preventDefault();
       var form = e.target;
       var formData = new FormData(form);
-      var resContainer = document.getElementById('result-container');
-      resContainer.innerHTML = '<div class="text-center"><div class="spinner-border text-primary" role="status"></div><p>Processando...</p></div>';
+      var spinnerContainer = document.getElementById('spinner-container');
+      spinnerContainer.innerHTML = '<div style="width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;"><div class="spinner-border text-primary" style="width:4rem;height:4rem;" role="status"></div><p class="mt-3 fs-5">Processando...</p></div>';
+      spinnerContainer.style.display = 'flex';
       axios.post('/create', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       })
       .then(function(response) {
         var json = response.data;
-        resContainer.innerHTML = '<h4>JSON Gerado:</h4><pre class="bg-light p-3 border rounded" id="json-preview">' + JSON.stringify(json, null, 2) + '</pre>';
+        spinnerContainer.style.display = 'none';
+        // Preenche campos editáveis
+        var editFields = document.getElementById('edit-fields');
+        var editTitle = document.getElementById('edit-title');
+        var editSummary = document.getElementById('edit-summary');
+        var editJsonDiv = document.getElementById('edit-json');
+        editTitle.value = json.title || '';
+        editSummary.value = json.summary || '';
+        editFields.style.display = '';
+        // Inicializa Ace Editor
+        if (!window.aceEditor) {
+          window.aceEditor = ace.edit(editJsonDiv);
+          window.aceEditor.session.setMode('ace/mode/json');
+          window.aceEditor.setTheme('ace/theme/github');
+          window.aceEditor.setOptions({
+            fontSize: '14px',
+            showPrintMargin: false,
+            wrap: true
+          });
+        }
+        window.aceEditor.setValue(JSON.stringify(json, null, 2), -1);
         // Preenche input de nome sugerido
         var saveSection = document.getElementById('save-section');
         var filenameInput = document.getElementById('filename-input');
         if (json.suggestedfileName) {
           filenameInput.value = json.suggestedfileName;
+        } else if (json.title) {
+          var fileBase = json.title
+            .normalize('NFD').replace(/[^\w\s]/g, '')
+            .trim().toLowerCase().replace(/\s+/g, '_');
+          filenameInput.value = fileBase ? fileBase + '.json' : 'quiz.json';
+          json.suggestedfileName = filenameInput.value;
         } else {
           filenameInput.value = 'quiz.json';
         }
         saveSection.style.display = '';
         // Salva json em window para uso posterior
         window.lastQuizJson = json;
+        // Atualiza JSON ao editar campos individuais
+        editTitle.addEventListener('input', function() {
+          window.lastQuizJson.title = editTitle.value;
+          // Gera nome do arquivo a partir do título
+          var fileBase = editTitle.value
+            .normalize('NFD').replace(/[^\w\s]/g, '')
+            .trim().toLowerCase().replace(/\s+/g, '_');
+          var fileName = fileBase ? fileBase + '.json' : 'quiz.json';
+          document.getElementById('filename-input').value = fileName;
+          window.lastQuizJson.suggestedfileName = fileName;
+          window.aceEditor.setValue(JSON.stringify(window.lastQuizJson, null, 2), -1);
+        });
+        editSummary.addEventListener('input', function() {
+        var filenameInput = document.getElementById('filename-input');
+        filenameInput.addEventListener('input', function() {
+          window.lastQuizJson.suggestedfileName = filenameInput.value.trim();
+          window.aceEditor.setValue(JSON.stringify(window.lastQuizJson, null, 2), -1);
+        });
+          window.lastQuizJson.summary = editSummary.value;
+          window.aceEditor.setValue(JSON.stringify(window.lastQuizJson, null, 2), -1);
+        });
+        // Atualiza JSON ao editar diretamente no Ace Editor
+        window.aceEditor.session.on('change', function() {
+          try {
+            var parsed = JSON.parse(window.aceEditor.getValue());
+            window.lastQuizJson = parsed;
+            editTitle.value = parsed.title || '';
+            editSummary.value = parsed.summary || '';
+          } catch (e) {
+            // Ignora erro de parse, não atualiza campos
+          }
+        });
       })
       .catch(function(err) {
         var msg = (err.response && err.response.data) ? err.response.data : err.message;
-        resContainer.innerHTML = '<div class="alert alert-danger">Erro ao gerar quiz: ' + msg + '</div>';
+        spinnerContainer.style.display = 'none';
+        showFeedback('Erro ao gerar quiz: ' + msg, 'Erro');
         document.getElementById('save-section').style.display = 'none';
       });
   // Lógica do botão salvar
@@ -156,9 +264,11 @@
         var modal = bootstrap.Modal.getInstance(document.getElementById('confirmSaveModal'));
         modal.hide();
         showFeedback('Arquivo salvo com sucesso!', 'Sucesso');
+        document.getElementById('spinner-container').style.display = 'none';
       })
       .catch(function(err) {
         showFeedback('Erro ao salvar arquivo: ' + (err.response?.data || err.message), 'Erro');
+        document.getElementById('spinner-container').style.display = 'none';
       });
   });
 

@@ -1,0 +1,131 @@
+{
+  "suggestedfileName": "diferentes_tipos_de_texto_narracao_descricao_e_dissertacao.json",
+  "title": "Diferentes Tipos de Texto: Narração, Descrição e Dissertação",
+  "summary": "Existem diversos tipos de texto, cada um com sua estrutura, objetivo e finalidade, surgindo conforme a função comunicativa do texto. No estudo inicial de textos, focamos nos mais usados: narração, descrição e dissertação.<br><br>* Texto narrativo: usado para contar histórias, verdadeiras ou fictícias, contendo início, meio e fim, com ações e personagens atuando em espaço e tempo determinados. Comum em gêneros como conversas, romances, crônicas e biografias.<br>* Texto descritivo: descreve situações, pessoas, lugares, etc. Pode ser objetivo, descrevendo com precisão, ou subjetivo, incorporando opiniões do autor. Presente em gêneros como atas, guias e relatórios.<br>* Texto dissertativo-argumentativo: apresenta defesa de opinião através de argumentos, visando concordância do leitor. Predomina a apresentação lógica de temas, com introdução, desenvolvimento e conclusão. Usado em editoriais, crônicas argumentativas e artigos de opinião.<br><br>A principal diferença entre os textos é o objetivo: narrativo conta uma história, descritivo descreve elementos, e dissertativo-argumentativo busca convencer sobre ideias.",
+  "questions": [
+    {
+      "type": "single",
+      "question": "Qual é o objetivo principal do texto narrativo?",
+      "choices": [
+        "Convencer o leitor sobre uma ideia",
+        "Descrever situações e pessoas",
+        "Contar uma história",
+        "Fazer uma crítica"
+      ],
+      "correct": "Contar uma história",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Em que gênero textual o texto descritivo é mais comum?",
+      "choices": [
+        "Biografias",
+        "Artigos de opinião",
+        "Guias",
+        "Cartas do leitor"
+      ],
+      "correct": "Guias",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "O que caracteriza um texto dissertativo-argumentativo?",
+      "choices": [
+        "Apresentação de uma história",
+        "Descrição detalhada de um cenário",
+        "Defesa de uma opinião através de argumentos",
+        "Listagem de eventos históricos"
+      ],
+      "correct": "Defesa de uma opinião através de argumentos",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Quais são os três tipos de texto principais discutidos no capítulo?",
+      "choices": [
+        "Narrativo, descritivo e dissertativo",
+        "Narrativo, expositivo e instrucional",
+        "Descritivo, expositivo e humorístico",
+        "Dissertativo, poético e explicativo"
+      ],
+      "correct": "Narrativo, descritivo e dissertativo",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual destes gêneros não é adequado para o texto dissertativo-argumentativo?",
+      "choices": [
+        "Crônicas argumentativas",
+        "Biografias",
+        "Artigos de opinião",
+        "Editoriais"
+      ],
+      "correct": "Biografias",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual é a principal função do texto descritivo objetivo?",
+      "choices": [
+        "Incluir opiniões do autor",
+        "Relatar histórias do cotidiano",
+        "Descrever com precisão, sem interferência pessoal",
+        "Convencer o leitor através de argumentos"
+      ],
+      "correct": "Descrever com precisão, sem interferência pessoal",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Como o texto narrativo geralmente é estruturado?",
+      "choices": [
+        "Introdução, desenvolvimento e conclusão",
+        "Listagem de fatos",
+        "Início, meio e fim",
+        "Descrição detalhada de personagens"
+      ],
+      "correct": "Início, meio e fim",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual é a diferença fundamental entre texto descritivo objetivo e subjetivo?",
+      "choices": [
+        "Objetivo convence, subjetivo informa",
+        "Subjetivo inclui opinião, objetivo não",
+        "Subjetivo descreve com precisão, objetivo não",
+        "Objetivo é literário, subjetivo é técnico"
+      ],
+      "correct": "Subjetivo inclui opinião, objetivo não",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Um exemplo de gênero textual para o texto narrativo é",
+      "choices": [
+        "Conto",
+        "Carta de leitor",
+        "Relatório",
+        "Editorial"
+      ],
+      "correct": "Conto",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual dos exemplos a seguir é mais adequado para um texto dissertativo?",
+      "choices": [
+        "Uma biografia famosa",
+        "Uma descrição de um parque",
+        "Uma defesa argumentativa sobre a preservação da natureza",
+        "A narração de um evento histórico"
+      ],
+      "correct": "Uma defesa argumentativa sobre a preservação da natureza",
+      "points": 10
+    }
+  ],
+  "grade": "3o Ano",
+  "quarter": "3o Bimestre",
+  "subject": "Português",
+  "chapter": "2"
+}

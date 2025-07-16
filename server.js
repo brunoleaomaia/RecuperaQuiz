@@ -1,16 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const { generateIndex } = require('./genindex');
-
-// Gera o index.json antes de iniciar o servidor
-try {
-  generateIndex();
-  console.log('index.json atualizado com sucesso.');
-} catch (err) {
-  console.error('Erro ao atualizar index.json:', err.message);
-}
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 

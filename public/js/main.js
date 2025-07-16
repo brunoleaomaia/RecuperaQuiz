@@ -154,13 +154,13 @@ async function loadChapterSummary(chapterFile) {
     let htmlContent = '';
     
     // Dividir por parágrafos
-    const paragraphs = summary.split('\n\n');
+    const paragraphs = summary.split('<br><br>');
     
     paragraphs.forEach(paragraph => {
       // Verificar se o parágrafo contém uma lista
       if (paragraph.includes('* ')) {
         // É uma lista - converter para HTML
-        const items = paragraph.split('\n');
+        const items = paragraph.split('<br>');
         htmlContent += '<ul>';
         
         items.forEach(item => {
