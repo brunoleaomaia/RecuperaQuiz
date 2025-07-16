@@ -14,8 +14,47 @@ const btnReturnHome = document.getElementById('btn-return-home');
 // Variáveis globais
 let currentChapter = null;
 let currentChapterFile = null;
-
 let quizzesCache = [];
+
+// Funções para manipulação de rota
+function getRouteParams() {
+  const hash = window.location.hash;
+  if (!hash) return {};
+  
+  const params = hash.split('/').slice(1);
+  return {
+    grade: decodeURIComponent(params[0]) || '',
+    quarter: decodeURIComponent(params[1]) || '',
+    subject: decodeURIComponent(params[2]) || '',
+    chapter: decodeURIComponent(params[3]) || ''
+  };
+}
+
+// Flag para evitar loops infinitos
+let isUpdatingFromURL = false;
+
+function updateURL(filters) {
+  if (isUpdatingFromURL) return; // Não atualiza a URL se estiver atualizando a partir dela
+  
+  let path = '#';
+  if (filters.grade) {
+    path += `/${filters.grade}`;
+    if (filters.quarter) {
+      path += `/${filters.quarter}`;
+      if (filters.subject) {
+        path += `/${filters.subject}`;
+        if (filters.chapter) {
+          path += `/${filters.chapter}`;
+        }
+      }
+    }
+  }
+  
+  // Só atualiza se a URL for diferente da atual
+  if (window.location.hash !== path) {
+    history.replaceState(null, null, path);
+  }
+}
 
 // Função para carregar a lista de quizzes
 async function loadQuizzesList() {
@@ -24,6 +63,17 @@ async function loadQuizzesList() {
     quizzesCache = response.data.quizzes;
     renderQuizzes(quizzesCache);
     populateFilters(quizzesCache);
+    
+    // Aplicar filtros da URL após carregar os dados
+    const routeParams = getRouteParams();
+    if (Object.keys(routeParams).length > 0) {
+      if (routeParams.grade) document.getElementById('filter-grade').value = routeParams.grade;
+      if (routeParams.quarter) document.getElementById('filter-quarter').value = routeParams.quarter;
+      if (routeParams.subject) document.getElementById('filter-subject').value = routeParams.subject;
+      if (routeParams.chapter) document.getElementById('filter-chapter').value = routeParams.chapter;
+      populateFilters(quizzesCache);
+      applyFilters();
+    }
   } catch (error) {
     console.error('Erro ao carregar a lista de quizzes:', error);
     chapterList.innerHTML = `
@@ -127,16 +177,21 @@ document.addEventListener('change', function(e) {
 
 function applyFilters() {
   let filtered = quizzesCache;
-  const grade = document.getElementById('filter-grade').value;
-  const quarter = document.getElementById('filter-quarter').value;
-  const subject = document.getElementById('filter-subject').value;
-  const chapter = document.getElementById('filter-chapter').value;
-  if (grade) filtered = filtered.filter(q => q.grade === grade);
-  if (quarter) filtered = filtered.filter(q => q.quarter === quarter);
-  if (subject) filtered = filtered.filter(q => q.subject === subject);
-  if (chapter) filtered = filtered.filter(q => q.chapter === chapter);
+  const filters = {
+    grade: document.getElementById('filter-grade').value,
+    quarter: document.getElementById('filter-quarter').value,
+    subject: document.getElementById('filter-subject').value,
+    chapter: document.getElementById('filter-chapter').value
+  };
+
+  if (filters.grade) filtered = filtered.filter(q => q.grade === filters.grade);
+  if (filters.quarter) filtered = filtered.filter(q => q.quarter === filters.quarter);
+  if (filters.subject) filtered = filtered.filter(q => q.subject === filters.subject);
+  if (filters.chapter) filtered = filtered.filter(q => q.chapter === filters.chapter);
+
+  // Atualizar a URL com os filtros atuais
+  updateURL(filters);
   renderQuizzes(filtered);
-// Removido fechamento de chave extra
 }
 
 // Função para carregar o resumo de um capítulo
@@ -206,6 +261,32 @@ async function loadDefaultChapter() {
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
+  // Adicionar listener para mudanças na URL
+  window.addEventListener('hashchange', () => {
+    isUpdatingFromURL = true;
+    const params = getRouteParams();
+    if (Object.keys(params).length > 0) {
+      const gradeSelect = document.getElementById('filter-grade');
+      const quarterSelect = document.getElementById('filter-quarter');
+      const subjectSelect = document.getElementById('filter-subject');
+      const chapterSelect = document.getElementById('filter-chapter');
+
+      // Atualizar os valores dos selects
+      gradeSelect.value = params.grade || '';
+      quarterSelect.value = params.quarter || '';
+      subjectSelect.value = params.subject || '';
+      chapterSelect.value = params.chapter || '';
+
+      // Atualizar as opções disponíveis e aplicar os filtros
+      populateFilters(quizzesCache);
+      applyFilters();
+    } else {
+      // Se não houver parâmetros, limpar os filtros
+      document.getElementById('btn-clear-filters').click();
+    }
+    isUpdatingFromURL = false;
+  });
+
   // Botão de lixeira para limpar pontuação
   document.getElementById('btn-clear-score').addEventListener('click', () => {
     const modal = new bootstrap.Modal(document.getElementById('modalClearScore'));
@@ -225,12 +306,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   // Botão para limpar filtros
   document.getElementById('btn-clear-filters').addEventListener('click', () => {
+    isUpdatingFromURL = true;
     document.getElementById('filter-grade').value = '';
     document.getElementById('filter-quarter').value = '';
     document.getElementById('filter-subject').value = '';
     document.getElementById('filter-chapter').value = '';
+    history.replaceState(null, null, '#');
     populateFilters(quizzesCache);
     applyFilters();
+    isUpdatingFromURL = false;
   });
   // Carregar a lista de capítulos
   const indexJson = {
