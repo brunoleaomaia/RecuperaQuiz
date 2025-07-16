@@ -10,6 +10,7 @@ async function gpt(text) {
     });
     const response = await openai.chat.completions.create({
         model: "gpt-4o",
+        temperature: 0.2,
         messages: [
             {
                 role: "system",
@@ -50,30 +51,43 @@ module.exports = async function processCreate(req) {
         fs.mkdirSync(subDir);
     }
     let savedFiles = [];
-    let ocrTexts = [];
+    let extractedTexts = [];
+    
     if (req.files && req.files.length > 0) {
         // Ordena os arquivos por nome antes de processar
         const sortedFiles = [...req.files].sort((a, b) => a.originalname.localeCompare(b.originalname));
+        
         for (const file of sortedFiles) {
             const fileName = `${timestamp}_${file.originalname}`;
             const filePath = path.join(subDir, fileName);
             const fileSize = (file.size / 1024).toFixed(2); // Tamanho em KB
             fs.writeFileSync(filePath, file.buffer);
             savedFiles.push(filePath);
+            
             try {
-                console.log(`Fazendo OCR para ${fileName} [${fileSize} KB=...`);
-                const { data: { text } } = await tesseract.recognize(filePath, 'por');
-                ocrTexts.push(text);
+                if (file.mimetype.startsWith('text/')) {
+                    // Para arquivos de texto, lê diretamente o conteúdo
+                    console.log(`Lendo arquivo de texto ${fileName} [${fileSize} KB]...`);
+                    const text = file.buffer.toString('utf-8');
+                    extractedTexts.push(text);
+                } else if (file.mimetype.startsWith('image/')) {
+                    // Para imagens, faz o OCR
+                    console.log(`Fazendo OCR para ${fileName} [${fileSize} KB]...`);
+                    const { data: { text } } = await tesseract.recognize(filePath, 'por');
+                    extractedTexts.push(text);
+                }
             } catch (err) {
-                console.error(`Erro no OCR (${fileName}):`, err);
+                console.error(`Erro ao processar ${fileName}:`, err);
             }
         }
     }
-    const fullText = ocrTexts.join('<br><br>');
-    console.log('OCR completo. Texto extraído:\n', fullText);
+    
+    const fullText = extractedTexts.join('<br><br>');
+    console.log('Processamento de arquivos completo. Texto extraído:\n', fullText);
     console.log('Iniciando processamento com GPT...');
     const gptResult = await gpt(fullText);
     console.log('Resultado do GPT:', gptResult);
+    
     try {
         const json = JSON.parse(gptResult);
         // Garante que os campos do request estejam presentes e corretos

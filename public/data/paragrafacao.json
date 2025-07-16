@@ -1,0 +1,131 @@
+{
+  "suggestedfileName": "paragrafacao.json",
+  "title": "Paragrafação",
+  "summary": "Paragrafações referem-se à divisão de textos em partes menores chamadas de parágrafos.<br><br>Um parágrafo é uma unidade do texto que reúne uma ideia central e é identificado graficamente pelo afastamento da primeira linha em relação à margem esquerda do texto. Eles são comuns em textos narrativos, descritivos e argumentativos.<br><br>* Parágrafo Argumentativo: Estruturado em torno de uma ideia, apresenta introdução, desenvolvimento e conclusão.<br>* Parágrafo Narrativo: Relaciona-se a personagens e ações, com verbos de ação e indicações de tempo, lugar, pessoa e modo.<br>* Parágrafo Descritivo: Utiliza adjetivos e verbos de estado para descrever um objeto ou ser, além de advérbios que detalham ações e características.<br><br>Os parágrafos são fundamentais para a organização das ideias de um texto, tornando-o mais claro e compreensível. O tópico frasal, primeira frase de cada parágrafo, introduz a ideia principal a ser desenvolvida nele.<br><br>Exemplo: No texto 'O Gato e o Galo', um parágrafo tem estrutura narrativa, com personagens e ações verbais. Outro exemplo é o texto 'A Tartaruga e a Lebre', que conta uma história de maneira progressiva através de parágrafos, cada qual com uma função na construção do relato.",
+  "questions": [
+    {
+      "type": "single",
+      "question": "O que caracteriza um parágrafo argumentativo?",
+      "choices": [
+        "Apresenta adjetivos qualificativos",
+        "Estruturado em torno de uma ideia, com introdução, desenvolvimento e conclusão",
+        "Refere-se a personagens e ações",
+        "Utiliza advérbios para detalhar ações"
+      ],
+      "correct": "Estruturado em torno de uma ideia, com introdução, desenvolvimento e conclusão",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual a função do tópico frasal nos parágrafos?",
+      "choices": [
+        "Encerrar a ideia do parágrafo",
+        "Introduzir a ideia principal a ser desenvolvida",
+        "Criar uma ruptura entre os parágrafos",
+        "Detalhar ações e características"
+      ],
+      "correct": "Introduzir a ideia principal a ser desenvolvida",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Como se identifica um parágrafo graficamente?",
+      "choices": [
+        "Por uma linha em branco antes e depois",
+        "Pelo afastamento da primeira linha em relação à margem esquerda",
+        "Por estar entre colchetes",
+        "Por um título no início"
+      ],
+      "correct": "Pelo afastamento da primeira linha em relação à margem esquerda",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual tipo de parágrafo é predominante no trecho 'O Gato e o Galo'?",
+      "choices": [
+        "Narrativo",
+        "Descritivo",
+        "Argumentativo",
+        "Expositivo"
+      ],
+      "correct": "Narrativo",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual a necessidade de existir parágrafos nos textos?",
+      "choices": [
+        "Para aumentar o tamanho do texto",
+        "Para facilitar a leitura e a compreensão através da divisão de ideias",
+        "Para garantir que o texto seja longo o suficiente",
+        "Para enfeitar o texto com espaços"
+      ],
+      "correct": "Para facilitar a leitura e a compreensão através da divisão de ideias",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Como podemos identificar um parágrafo descritivo?",
+      "choices": [
+        "Pelo uso predominante de vernos de ação",
+        "Por descrever todos os detalhes de um objeto, situação ou ser",
+        "Por apresentar introdução, desenvolvimento e conclusão",
+        "Por introduzir uma nova ideia principal"
+      ],
+      "correct": "Por descrever todos os detalhes de um objeto, situação ou ser",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Qual é a moral da história 'A Tartaruga e a Lebre'?",
+      "choices": [
+        "Devagar se vai ao longe",
+        "Quem espera sempre alcança",
+        "A pressa é inimiga da perfeição",
+        "A união faz a força"
+      ],
+      "correct": "Devagar se vai ao longe",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "Que tipo de parágrafo se destaca em histórias como 'A Tartaruga e a Lebre'?",
+      "choices": [
+        "Argumentativo",
+        "Narrativo",
+        "Descritivo",
+        "Expositivo"
+      ],
+      "correct": "Narrativo",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "O que ocorre no parágrafo com estrutura narrativa?",
+      "choices": [
+        "A introdução de uma ideia complexa",
+        "A descrição de detalhes extensivos",
+        "A apresentação de personagens e ações",
+        "A conclusão de um argumento"
+      ],
+      "correct": "A apresentação de personagens e ações",
+      "points": 10
+    },
+    {
+      "type": "single",
+      "question": "O que o trecho 'O gato e o galo' exemplifica?",
+      "choices": [
+        "Parágrafo descritivo",
+        "Parágrafo expositivo",
+        "Parágrafo narrativo",
+        "Parágrafo argumentativo"
+      ],
+      "correct": "Parágrafo narrativo",
+      "points": 10
+    }
+  ],
+  "grade": "3o Ano",
+  "quarter": "3o Bimestre",
+  "subject": "Português",
+  "chapter": "4"
+}
