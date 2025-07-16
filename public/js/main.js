@@ -60,7 +60,7 @@ function renderQuizzes(quizzes) {
         <small>${quiz.description || 'Click to access the summary and quiz'}</small><br>
       </div>
       <div class="text-end">
-      <span class="badge bg-primary">${quiz.questions || '?'} questions</span><br>
+      <span class="badge bg-primary">${quiz.questions || '?'} questões</span><br>
       <i class="bi bi-puzzle-fill text-info"></i> <span class="badge bg-info quiz-stats-attempts">000</span><br>
       <i class="bi bi-arrow-up-right-square text-success"></i> <span class="badge bg-success quiz-stats-max">000</span><br>
       <i class="bi bi-arrow-down-right-square text-secondary text-opacity-75"></i> <span class="badge bg-secondary bg-opacity-50 quiz-stats-min">000</span><br>
